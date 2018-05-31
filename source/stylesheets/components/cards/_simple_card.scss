@@ -1,0 +1,31 @@
+.simple-card-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 20px auto;
+  h2 {
+    color: $green;
+    font-weight: bolder;
+  }
+}
+
+.simple-card {
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p {
+    flex: 1 0 auto;
+  }
+  h3 {
+    color: $purple;
+    font-weight: bolder;
+  }
+}
+
+.simple-card .simple-card-image {
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}

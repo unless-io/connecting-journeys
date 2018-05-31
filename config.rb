@@ -3,6 +3,12 @@ activate :autoprefixer do |prefix|
 end
 
 activate :sprockets
+activate :dato, live_reload: true
+activate :i18n, mount_at_root: :nl, langs: [:en, :nl]
+
+configure :development do
+  activate :livereload
+end
 
 page '/*.xml', layout: false
 page '/*.json', layout: false

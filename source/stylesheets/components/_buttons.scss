@@ -1,0 +1,23 @@
+.button-outline {
+  border: 1px solid;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: lighter;
+}
+
+.button-outline.purple {
+  border-color: $purple;
+  color: $purple;
+}
+
+.button-outline.white {
+  border-color: white;
+  color: white;
+}
+
+.button-simple {
+  color: $green;
+  &:hover {
+    color: $green;
+  }
+}
