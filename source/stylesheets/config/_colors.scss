@@ -4,16 +4,21 @@
 $red: #EE5F5B;
 $blue: #469AE0;
 $yellow: #FDB631;
-$gray: #3c3c3b;
+$gray: #424040;
 $light-gray: #F4F4F4;
 
 
 $orange: #e8841e;
 $green: #6eb35d;
+$light-green: rgba(110, 179, 93, 0.7);
 $dark-gray: #706f6f;
 $brown: #84502c;
 $purple: #60217b;
 
 .purple {
   color: $purple;
+}
+
+.green {
+  color: $green;
 }

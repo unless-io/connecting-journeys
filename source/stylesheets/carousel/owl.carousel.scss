@@ -8,6 +8,11 @@
   margin: 0 30px;
   background-size: cover;
   background-position: center;
+  .quote {
+    max-width: 850px;
+    margin: 16px auto;
+    font-weight: 100;
+  }
   .avatar {
     margin: 10px auto;
     height: 75px;
@@ -15,6 +20,9 @@
     background-size: cover;
     background-position: center;
     border-radius: 50%;
+  }
+  .author {
+    font-weight: 100;
   }
 }
 
@@ -24,4 +32,16 @@
   display: flex;
   justify-content: space-between;
   color: $purple;
+  .owl-nav-chevron {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid $purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .fas {
+      font-size: 10px;
+    }
+  }
 }

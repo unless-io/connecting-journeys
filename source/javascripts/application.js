@@ -13,17 +13,17 @@ function activateCarousel() {
         0:{
           items:1,
           loop: true,
-          stagePadding: 50
+          stagePadding: 10
         },
         600:{
           items:1,
           loop: true,
-          stagePadding: 50
+          stagePadding: 20
         },
         1000:{
           items:1,
           loop:true,
-          stagePadding: 150
+          stagePadding: 50
         }
       }
     });
