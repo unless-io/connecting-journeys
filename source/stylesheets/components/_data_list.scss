@@ -1,0 +1,70 @@
+.journey-description {
+  padding-right: 50px;
+  line-height: 1.5;
+}
+
+.journey-description .charity {
+  border-top: 1px solid rgba(1,1,1,0.2);
+  margin-top: 20px;
+}
+
+.journey-data-container {
+  padding-left: 20px;
+  padding-top: 20px;
+  .data-list:first-child {
+    border-top: none;
+  }
+  .data-list {
+    border-top: 1px solid rgba(1,1,1,0.2);
+    margin-bottom: 20px;
+  }
+}
+
+.data-list {
+  li {
+    display: flex;
+    padding: 10px 5px;
+    border-radius: 2px;
+    margin: 1px;
+    color: rgba(1,1,1,0.6);
+    .identifier {
+      flex: 0 0 30%;
+      font-weight: bold;
+      color: $gray;
+      .fas {
+        width: 15px;
+        margin-right: 10px;
+        color: $green;
+      }
+    }
+  }
+}
+
+.data-embedded-list {
+  border-top: 1px solid rgba(1,1,1,0.2);
+  margin-bottom: 20px;
+  padding: 0;
+  list-style: none;
+  ul {
+    padding: 0;
+    li {
+      margin: 10px 0;
+    }
+  }
+  .first-level {
+    display: flex;
+    padding: 10px 5px;
+    border-radius: 2px;
+    margin: 1px;
+    color: rgba(1,1,1,0.6);
+    .identifier {
+      flex: 0 0 30%;
+      font-weight: bold;
+      color: $gray;
+      .fas {
+        margin-right: 10px;
+        color: $green;
+      }
+    }
+  }
+}
