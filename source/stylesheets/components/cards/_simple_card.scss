@@ -6,6 +6,14 @@
     color: $green;
     font-weight: bolder;
   }
+  .avatar {
+    margin: 10px auto;
+    height: 75px;
+    width: 75px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+  }
 }
 
 .simple-card {
