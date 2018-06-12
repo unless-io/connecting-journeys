@@ -10,6 +10,17 @@ configure :development do
   activate :livereload
 end
 
+# dato.tap do |dato|
+
+  # iterate over the "Blog post" records...
+  # dato.blog_posts.each do |article|
+  [1,2,3].each do |item|
+    # ...and create a page for each article starting from a template!
+    proxy "/reizen/#{item}.html", "/templates/article.html", locals: { article: item }
+  end   
+  # end
+# end
+
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
