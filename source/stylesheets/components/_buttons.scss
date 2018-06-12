@@ -15,6 +15,11 @@
   color: white;
 }
 
+.button-outline.orange {
+  border-color: $yellow;
+  color: $yellow;
+}
+
 .button-simple {
   color: $green;
   &:hover {
