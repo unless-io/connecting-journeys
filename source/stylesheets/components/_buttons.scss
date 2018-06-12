@@ -3,6 +3,9 @@
   padding: 5px 15px;
   border-radius: 20px;
   font-weight: lighter;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .button-outline.purple {
@@ -16,13 +19,16 @@
 }
 
 .button-outline.orange {
-  border-color: $yellow;
-  color: $yellow;
+  border-color: $orange;
+  color: $orange;
+  margin-top: 10px;
+  display: inline-block;
 }
 
 .button-simple {
-  color: $green;
+  color: $orange;
   &:hover {
-    color: $green;
+    color: $orange;
+    text-decoration: none;
   }
 }
