@@ -1,5 +1,33 @@
 <div class="main-wrapper">
-  <div class="banner-blank" style="background-image:url('<%= image_path 'header.jpg' %>');">
+  <div class="banner-nav" style="background-image:url('<%= image_path 'header.jpg' %>');">
+    <div class="banner-content text-center">
+      <h2>
+        Explore Learn Inspire
+      </h2>
+      <ul class="list-inline list-unstyled">
+        <li>
+          <%= link_to "Voor jezelf", "#", class: "banner-nav-item" %>
+        </li>
+        <span>
+          •
+        </span>
+        <li>
+          <%= link_to "Voor je school", "#", class: "banner-nav-item" %>
+        </li>
+        <span>
+          •
+        </span>
+        <li>
+          <%= link_to "Voor je bedrijf", "#", class: "banner-nav-item" %>
+        </li>
+        <span>
+          •
+        </span>  
+        <li>
+          <%= link_to "Voor non-profitorganisaties", "#", class: "banner-nav-item" %>
+        </li>
+      </ul>
+    </div>
   </div>
 
   <div class="container marged">
