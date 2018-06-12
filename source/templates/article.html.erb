@@ -17,18 +17,22 @@
       <div class="col-xs-12 col-md-6 col-lg-6">
         <div class="journey-description">
           <!-- Set up your HTML -->
-            <div class="owl-carousel owl-theme">
-              <% ['a', 'b', 'c', 'd', 'e'].each do |item| %>
-              <div class="carousel-image text-center">
+          <div class="owl-carousel owl-theme">
+            <% ['a', 'b', 'c', 'd', 'e'].each do |item| %>
+            <div class="carousel-image text-center">
+
+              <a href="http://placehold.it/500/500" class="swipebox" title="My Caption">
                 <div class="carousel-image-item" style="background-image:url('http://placehold.it/500/500');"></div>
-              </div>
-              <% end %>
+              </a>
+
             </div>
-            <div class="owl-custom-nav">
-              <div class="owl-previous-custom owl-nav-chevron"><i class="fas fa-chevron-left"></i></div>
-              <div class="owl-next-custom owl-nav-chevron"><i class="fas fa-chevron-right"></i></div>
-            </div>
-            <h2>
+            <% end %>
+          </div>
+          <div class="owl-custom-nav">
+            <div class="owl-previous-custom owl-nav-chevron"><i class="fas fa-chevron-left"></i></div>
+            <div class="owl-next-custom owl-nav-chevron"><i class="fas fa-chevron-right"></i></div>
+          </div>
+          <h2>
             Over deze reis
           </h2>
           <p>
@@ -146,7 +150,8 @@
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
     console.log("DOM fully loaded and parsed");
-    activateCarousel()
+    activateCarousel();
+    $('.swipebox').swipebox();
   });
 </script>
 <% end %>

@@ -1,6 +1,7 @@
 //= require jquery
 //= require bootstrap
 //= require carousel/owl.carousel
+//= require jquery.swipebox
 
 
 function activateCarousel() {
