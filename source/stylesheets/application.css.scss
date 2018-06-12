@@ -3,6 +3,8 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 @import "config/normalize";
+@import "config/utilities";
+
 
 // External libraries
 @import "bootstrap-sprockets";
@@ -13,3 +15,11 @@
 @import "components/index";
 @import "pages/index";
 @import "carousel/owl.carousel";
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
