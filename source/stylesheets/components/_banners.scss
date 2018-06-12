@@ -18,3 +18,33 @@
     }
   }
 }
+
+.banner-blank, .banner-nav {
+  background-size: cover;
+  background-position: center;
+  height: 20vh;
+  width: 100%;
+}
+
+.banner-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .banner-content {
+    h2 {
+      color: white;
+      font-weight: medium;
+    }
+    ul {
+      span {
+        color: white;
+      }
+      .banner-nav-item {
+        color: white;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}
