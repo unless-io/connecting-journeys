@@ -2,16 +2,15 @@
 title: Connecting Journeys
 ---
 
-<div class="banner-full-width" style="background-image:url('<%= image_path 'header.jpg' %>');">
+<div class="banner-full-width" style="background-image:url('<%= dato.home_page.banner_image.url %>');">
 	<div class="banner-content">
 		<h1>
-			Reizen met betekenis
+			<%= dato.home_page.title %>
 		</h1>
 		<p>
-			Reizen die uitdagen, inspireren en verbinden. <br>
-			Op maat gemaakt, speciaal voor jou of je organisatie.
+			<%= dato.home_page.tagline %>
 		</p>
-		<%= link_to "Boek nu jouw unieke reis", "#", class: "button-outline white"  %>
+		<%= link_to dato.home_page.button_text, "#", class: "button-outline white"  %>
 	</div>
 </div>
 
@@ -21,15 +20,10 @@ title: Connecting Journeys
 			<div class="col-xs-12">
 				<div class="simple-card-header">
 					<h2>
-						Boek een reis die je leven verandert
+						<%= dato.home_page_section_1.title %>
 					</h2>
-					<p>
-						<strong>Je kan veel meer verschil maken als je in verbinding staat met de wereld.</strong> <br><br>
-						Daarom organiseren wij <strong>reizen die je verbinden</strong> met de locale cultuur, met je omgeving en met jezelf. Want echte duurzame verandering
-						en daadkracht komt vanuit mensen die beseffen dat de wereld niet ophoudt bij de grenzen van ons land.
-						<br><br>Een duurzamere, harmonieuzere wereld. <strong>Het kan.</strong>
-					</p>
-					<%= link_to "Lees meer over ons doel en onze visie op reizen", "#", class: "button-outline orange"  %>
+					<%= Kramdown::Document.new(dato.home_page_section_1.body_text).to_html %>
+					<%= link_to dato.home_page_section_1.button_text, "#", class: "button-outline orange"  %>
 				</div>
 			</div>
 		</div>
@@ -42,12 +36,9 @@ title: Connecting Journeys
 			<div class="col-xs-12 col-lg-12">
 				<div class="simple-card-header">
 					<h2>
-						Boek een reis die je leven verandert
+						<%= dato.home_page_section_2.title %>
 					</h2>
-					<p>
-						Wij helpen je met het organiseren van een reis waarop je je geen toerist voelt,
-						maar echt onderdeel wordt van een andere wereld.
-					</p>
+					<%= Kramdown::Document.new(dato.home_page_section_2.body_text).to_html %>
 				</div>
 			</div>
 		</div>
@@ -55,41 +46,32 @@ title: Connecting Journeys
 			<div class="col-xs-12 col-lg-4">
 				<div class="simple-card">
 					<h3>
-						Ontdekkingsreizen
+						<%= Kramdown::Document.new(dato.home_page_section_2.block_1_title).to_html %>
 					</h3>
-					<p>
-						Een reisplan op maat. Voor avonturiers die zich in
-						het diepe willen storten.
-					</p>
+					<%= Kramdown::Document.new(dato.home_page_section_2.block_1_description).to_html %>
 				</div>
 			</div>
 			<div class="col-xs-12 col-lg-4">
 				<div class="simple-card">
 					<h3>
-						Ontdekkingsreizen
+						<%= Kramdown::Document.new(dato.home_page_section_2.block_2_title).to_html %>
 					</h3>
-					<p>
-						Een reisplan op maat. Voor avonturiers die zich in
-						het diepe willen storten.
-					</p>
+					<%= Kramdown::Document.new(dato.home_page_section_2.block_2_description).to_html %>
 				</div>
 			</div>
 			<div class="col-xs-12 col-lg-4">
 				<div class="simple-card">
 					<h3>
-						Ontdekkingsreizen
+						<%= Kramdown::Document.new(dato.home_page_section_2.block_3_title).to_html %>
 					</h3>
-					<p>
-						Een reisplan op maat. Voor avonturiers die zich in
-						het diepe willen storten.
-					</p>
+					<%= Kramdown::Document.new(dato.home_page_section_2.block_3_description).to_html %>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="text-center">
-					<%= link_to "Lees meer over ons doel en onze visie op reizen", "#", class: "button-outline orange"  %>
+					<%= link_to dato.home_page_section_2.button_text, "#", class: "button-outline orange"  %>
 				</div>
 			</div>
 		</div>
@@ -103,13 +85,11 @@ title: Connecting Journeys
 			<div class="col-xs-12 col-lg-8 col-lg-offset-2">
 				<div class="quote-box">
 					<h3>
-						"Mijn reis met ConnectingJourneys heeft mijn leven veranderd.
-						Ik ben meer gefocust, voel me vrijer en weet wat ik wil met mijn leven!""
+						<%= dato.home_page_section_3.quote_text %>
 					</h3>
 					<p>
-						Laurens Kraaijenbrink
+						<%= dato.home_page_section_3.name %>
 					</p>
-					<div class="avatar" style="background-image:url('http://placehold.it/100/100');"></div>
 				</div>
 			</div>
 		</div>
@@ -122,45 +102,37 @@ title: Connecting Journeys
 			<div class="col-xs-12 col-lg-12">
 				<div class="simple-card-header">
 					<h2>
-						Wat kunnen we doen voor je organisatie?
+						<%= Kramdown::Document.new(dato.home_page_section_4.title).to_html %>
 					</h2>
 					<p>
-						Niet alleen als individu, maar ook als organisatie kan je wijsheid vinden in reizen.
+						<%= Kramdown::Document.new(dato.home_page_section_4.body_text).to_html %>
 					</p>
 				</div>
 			</div>
 			<div class="col-xs-12 col-lg-4">
 				<div class="simple-card">
 					<h3>
-						Voor scholen
+						<%= Kramdown::Document.new(dato.home_page_section_4.block_1_title).to_html %>
 					</h3>
-					<p>
-						Educatieve reizen die net wat meer zijn
-						dan de standaard excursie.
-					</p>
+					<%= Kramdown::Document.new(dato.home_page_section_4.block_1_description).to_html %>
 					<%= link_to "Vertel me meer", "#", class: "button-simple"  %>
 				</div>
 			</div>
 			<div class="col-xs-12 col-lg-4">
 				<div class="simple-card">
 					<h3>
-						Voor NGO’s
+						<%= Kramdown::Document.new(dato.home_page_section_4.block_2_title).to_html %>
 					</h3>
-					<p>
-						Hoe verbind je mensen aan jouw missie?
-					</p>
+					<%= Kramdown::Document.new(dato.home_page_section_4.block_2_description).to_html %>
 					<%= link_to "Vertel me meer", "#", class: "button-simple"  %>
 				</div>
 			</div>
 			<div class="col-xs-12 col-lg-4">
 				<div class="simple-card">
 					<h3>
-						Voor bedrijven
+						<%= Kramdown::Document.new(dato.home_page_section_4.block_3_title).to_html %>
 					</h3>
-					<p>
-						Maatschappelijk bewust en verantwoord
-						ondernemen is meer dan een groen labeltje.
-					</p>
+					<%= Kramdown::Document.new(dato.home_page_section_4.block_3_description).to_html %>
 					<%= link_to "Vertel me meer", "#", class: "button-simple"  %>
 				</div>
 			</div>
@@ -168,35 +140,15 @@ title: Connecting Journeys
 	</div>
 </div>
 
-<div class="wrapper-background-image" style="background-image:url('<%= image_path 'header.jpg' %>');">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-lg-10 col-lg-offset-1">
-        <div class="cta-box">
-          <h2>
-            Ontdek wat een reis voor jouw organisatie kan betekenen
-          </h2>
-          <%= link_to "Neem nu contact op", "#", class: "button-outline white"  %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="wrapper-white">
+<div class="wrapper-background-image" style="background-image:url('<%= dato.home_page_section_5.banner_image.url %>');">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-lg-10 col-lg-offset-1">
-				<div class="text-box">
-					<h2 class="green text-center header-bolder">
-						Pak de regie over je leven
+				<div class="cta-box">
+					<h2>
+						<%= dato.home_page_section_5.banner_text %>
 					</h2>
-					<p class="text-center">
-						Wie reist, leert nieuwe werelden kennen. Andere manieren van leven. Het is makkelijk om je leven te laten
-						leiden door je omstandigheden. Maar als je ontdekt dat het anders kan, vind je de kracht om je leven te
-						veranderen. Om de dingen zo in te richten als jij dat wil. Om autonoom en zelfverzekerd in het leven te staan.
-					</p>
-					<p class="text-center">Reizen verbindt je met de wereld. <%= link_to "Lees meer over onze visie op reizen", "#" %></p>
+					<%= link_to dato.home_page_section_5.button_text, "#", class: "button-outline white"  %>
 				</div>
 			</div>
 		</div>
@@ -210,17 +162,13 @@ title: Connecting Journeys
 	</p>
 	<!-- Set up your HTML -->
 	<div class="owl-carousel owl-theme">
-		<% ['a', 'b', 'c', 'd', 'e'].each do |item| %>
+		<% dato.testimonials.each do |testimonial| %>
 		<div class="carousel-image text-center">
-			<p class="quote">
-				At ex es este solut quos dolupti nctempos dolora core nobit pa doloratus, sitatem. Nequati omniet veliatemped
-				quatis et ut ma qui velicim dis sendam ute dellandignam explici derion rest landus dolum ni offic tem
-				etur aut ipsaerum ipsuscid que nem ipicaboria voluptaturem abo. Cea doluptatum ut estota aut quis quia
-			</p>
+			<%= Kramdown::Document.new(testimonial.quote_text).to_html %>
 			<p class="author purple">
-				Suzanne Beaumont - BeauCreative (<%= item %>)
+				<%= Kramdown::Document.new(testimonial.full_name_and_company).to_html %>
 			</p>
-			<div class="avatar" style="background-image:url('http://placehold.it/100/100');"></div>
+			<div class="avatar" style="background-image:url('<%= testimonial.avatar.url %>');"></div>
 		</div>
 		<% end %>
 	</div>
@@ -240,48 +188,20 @@ title: Connecting Journeys
 					</h2>
 				</div>
 			</div>
+			<% dato.trips.first(3).each do |trip| %>
 			<div class="col-xs-12 col-lg-4">
 				<div class="simple-card">
-					<div class="simple-card-image" style="background-image:url('<%= image_path 'bike.jpg' %>');"></div>
+					<div class="simple-card-image" style="background-image:url('<%= trip.photos.first.url %>');"></div>
 					<h3>
-						Mountainbiken in Peru
+						<%= trip.title %>
 					</h3>
 					<p>
-						Ciet qui dolent quibus. Quo id est as dolum qui que
-						volorro magnim nia dolupta tiorenes idebitate nonsentem
-						fugia vololuptat.
+						<%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
 					</p>
 					<%= link_to "Vertel me meer!", "#", class: "button-simple"  %>
 				</div>
 			</div>
-			<div class="col-xs-12 col-lg-4">
-				<div class="simple-card">
-					<div class="simple-card-image" style="background-image:url('<%= image_path 'runner.jpg' %>');"></div>
-					<h3>
-						Hardlopen in Ethiopië
-					</h3>
-					<p>
-						Ciet qui dolent quibus. Quo id est as dolum qui que
-						volorro magnim nia dolupta tiorenes idebitate nonsentem
-						fugia vololuptat.
-					</p>
-					<%= link_to "Vertel me meer!", "#", class: "button-simple"  %>
-				</div>
-			</div>
-			<div class="col-xs-12 col-lg-4">
-				<div class="simple-card">
-					<div class="simple-card-image" style="background-image:url('<%= image_path 'yoga.jpg' %>');"></div>
-					<h3>
-						Yoga in Nepal
-					</h3>
-					<p>
-						Ciet qui dolent quibus. Quo id est as dolum qui que
-						volorro magnim nia dolupta tiorenes idebitate nonsentem
-						fugia vololuptat.
-					</p>
-					<%= link_to "Vertel me meer!", "#", class: "button-simple"  %>
-				</div>
-			</div>
+			<% end %>
 		</div>
 	</div>
 </div>

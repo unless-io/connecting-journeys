@@ -3,6 +3,10 @@
 //= require carousel/owl.carousel
 //= require jquery.swipebox
 
+document.addEventListener("DOMContentLoaded", function(event) {
+  $('.dropdown-toggle').dropdown()
+});
+
 
 function activateCarousel() {
   $(document).ready(function(){

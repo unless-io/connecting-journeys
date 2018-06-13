@@ -11,7 +11,23 @@
               <%= link_to 'Home', "/index.html", class: "navbar-connecting-journeys-link"  %>
             </li>
             <li>
-              <%= link_to 'Voor wie', "/jezelf.html", class: "navbar-connecting-journeys-link"  %>
+              <div class="dropdown">
+                <%= link_to 'Voor wie', "/jezelf.html", class: "navbar-connecting-journeys-link dropdown-toggle", id: "nav-dropdown", "data-toggle": "dropdown", "aria-haspopup": true, "aria-expanded": true  %>
+                <ul class="dropdown-menu" aria-labelledby="nav-dropdown">
+                  <li>
+                    <%= link_to "Jezelf", "/jezelf.html"  %>
+                  </li>
+                  <li>
+                    <%= link_to "Bedrijven", "/bedrijf.html"  %>
+                  </li>
+                  <li>
+                    <%= link_to "Scholen", "/school.html"  %>
+                  </li>
+                  <li>
+                    <%= link_to "Non-profits", "/non-profits.html"  %>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li>
               <%= link_to 'Over', "/over.html", class: "navbar-connecting-journeys-link"  %>
