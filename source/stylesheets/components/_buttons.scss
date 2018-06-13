@@ -2,7 +2,9 @@
   border: 1px solid;
   padding: 5px 15px;
   border-radius: 20px;
-  font-weight: lighter;
+  font-weight: bold;
+  font-size:17px;
+  font-family: "Como", "Helvetica", "sans-serif";
   &:hover {
     text-decoration: none;
   }
@@ -26,7 +28,9 @@
 }
 
 .button-simple {
+  font-size: 17px;
   color: $orange;
+  font-weight: bold;
   &:hover {
     color: $orange;
     text-decoration: none;

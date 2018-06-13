@@ -1,6 +1,8 @@
-.journey-description {
-  padding-right: 50px;
-  line-height: 1.5;
+@media (min-width: 768px) {
+  .journey-description {
+    padding-right: 50px;
+    line-height: 1.5;
+  }
 }
 
 .journey-description .charity {
