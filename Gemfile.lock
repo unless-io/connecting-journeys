@@ -168,6 +168,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    redcarpet (3.4.0)
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
@@ -205,6 +206,7 @@ DEPENDENCIES
   middleman-livereload
   middleman-sprockets
   pry-byebug
+  redcarpet
 
 RUBY VERSION
    ruby 2.4.0p0

@@ -1,12 +1,12 @@
 <div class="main-wrapper">
   <div class="background-half-white"></div>
-  <div class="banner-nav" style="background-image:url('<%= image_path 'header.jpg' %>');">
+  <div class="banner-nav" style="background-image:url('<%= trip.banner_photo.url %>');">
     <div class="banner-content text-center">
       <h2 class="big-header">
-        Hardloopreis XtraRun4Ethiopia
+        <%= trip.title %>
       </h2>
       <p class="tagline">
-        "Een sportieve kennismaking met hét ultieme hardloopland"
+        <%= trip.tagline %>
       </p>
     </div>
   </div>
@@ -18,11 +18,11 @@
         <div class="journey-description">
           <!-- Set up your HTML -->
           <div class="owl-carousel owl-theme">
-            <% ['a', 'b', 'c', 'd', 'e'].each do |item| %>
+            <% trip.photos.each do |photo| %>
             <div class="carousel-image text-center">
 
-              <a href="http://placehold.it/500/500" class="swipebox" title="My Caption">
-                <div class="carousel-image-item" style="background-image:url('http://placehold.it/500/500');"></div>
+              <a href="<%= photo.url %>" class="swipebox">
+                <div class="carousel-image-item" style="background-image:url('<%= photo.url %>');"></div>
               </a>
 
             </div>
@@ -36,30 +36,11 @@
             Over deze reis
           </h2>
           <p>
-            "Ethiopiërs vereren hun hardloopkampioenen als helden. Hardlopen is voor Ethiopiërs een uiting van hun cultuur. Sommigen beoefenen de sport op hoog niveau en dromen van een carrière als professionele atleet, anderen zien het gewoon als een gezond ochtendritueel en een leuk tijdverdrijf. Door alle lagen van de bevolking heen is het een sport met betekenis; hardlopen verbroedert, overbrugt verschillen in afkomst en sociale status en zet Ethiopië internationaal op de kaart. Ze zijn trots op hun hardloopcultuur en dat laten ze je graag aan je zien!"
+            <%= Kramdown::Document.new(trip.description).to_html %>
           </p>
 
           <div class="charity">
-            <h4>
-              Onderwijs voor kinderen met een beperking
-            </h4>
-            <p>
-              Middels deelname aan deze reis en jouw sponsorbijdrage wordt aanvullend onderwijs gefinancierd voor kinderen met een beperking ter voorbereiding op financiële zelfstandigheid en ter vergroting van hun zelfvertrouwen. Zij ontdekken hun talenten en leren deze benutten, waardoor zij hun eigen toekomst kunnen creëren zoals zíj die wensen!
-            </p>
-            <p>
-              Kinderen met een beperking behoren in Ethiopië tot de kwetsbaarste en kansarmste groepen in de samenleving. Zij worden gediscrimineerd en uitgesloten van deelname aan onderwijs en werk. De overheid heeft geen oog voor deze groep, de kinderen zijn volledig afhankelijk van hun familie en hun omgeving.
-            </p>
-            <p>
-              XtraRun4Ethiopia is een initiatief van StartUp4kids die ernaar streeft wereldwijd sociaal achtergestelde kinderen extra scholing te bieden, waarmee ze leren zich te ontplooien, kansen te benutten en hun eigen dromen waar te maken.
-            </p>
-            <p>
-              <h4>
-                Ga je mee over de finish?
-              </h4>
-              <p>
-                Kijk voor de reiskosten, het sponsorgeld en aanmelden op <a href="https://www.startup4kids.nl/hardloopreizen/">https://www.startup4kids.nl/hardloopreizen/</a>
-                Of neem contact met mij op!
-              </p>
+            <%= Kramdown::Document.new(trip.charity_description).to_html %>
             </div>
           </div>
         </div>
@@ -70,10 +51,10 @@
             </h2>
             <ul class="data-list list-unstyled">
              <li>
-              <span class="identifier"><i class="fas fa-calendar-alt"></i>Data:</span> Van zaterdag 10 t/m woensdag 21 november 2018 & november 2019
+              <span class="identifier"><i class="fas fa-calendar-alt"></i>Data:</span> <%= trip.data %>
             </li>
             <li>
-              <span class="identifier"><i class="fas fa-clock"></i>Duur:</span> 12 dagen
+              <span class="identifier"><i class="fas fa-clock"></i>Duur:</span> <%= trip.duration %>
             </li>
           </ul>
           <h2>
@@ -81,10 +62,10 @@
           </h2>
           <ul class="data-list list-unstyled">
             <li>
-              <span class="identifier"><i class="fas fa-map-marker"></i>Waar:</span> Ethiopië: Addis Ababa, Bekoji, Bale Mountains, Hawassa
+              <span class="identifier"><i class="fas fa-map-marker"></i>Waar:</span> <%= trip.where %>
             </li>
             <li>
-              <span class="identifier"><i class="fas fa-compass"></i>Aantal km:</span> 10 km op 2.500m hoogte
+              <span class="identifier"><i class="fas fa-compass"></i>Aantal km:</span> <%= trip.amount_of_kilometers %>
             </li>
           </ul>
           <h2>
@@ -92,14 +73,13 @@
           </h2>
           <ul class="data-list list-unstyled">
             <li>
-              <span class="identifier"><i class="fas fa-user"></i>Voor wie:</span> Iedereen die van hardlopen houdt, de Ethiopische cultuur wil leren kennen en bij wil
-              dragen aan het onderwijsproject van StartUp4kids
+              <span class="identifier"><i class="fas fa-user"></i>Voor wie:</span> <%= trip.for_who %>
             </li>
             <li>
-              <span class="identifier"><i class="fas fa-users"></i>Deelnemers:</span> minimaal 8, maximaal 14 personen per reis
+              <span class="identifier"><i class="fas fa-users"></i>Deelnemers:</span> <%= trip.participants %>
             </li>
             <li>
-              <span class="identifier"><i class="fas fa-calendar-check"></i>Inschrijving:</span> Je kunt je inschrijven als individu, met een groep of met een bedrijfsteam
+              <span class="identifier"><i class="fas fa-calendar-check"></i>Inschrijving:</span> <%= trip.registration %>
             </li>
           </ul>
           <h2>
@@ -108,35 +88,7 @@
           <ul class="data-embedded-list">
             <li class="first-level">
               <span class="identifier"><i class="fas fa-globe"></i>Wat:</span>
-              <ul>
-                <li>Je bezoekt de onderwijsprogramma’s, zodat je met eigen ogen kunt zien waar het sponsorgeld aan
-                  besteedt wordt
-                </li>
-                <li>
-                  Je doet mee aan de ‘Great Ethiopian Run’, het grootste hardloopevenement van Afrika
-                </li>
-                <li>
-                  10km hardlopen op 2.500m hoogte
-                </li>
-                <li>
-                  Je maakt kennis met hardlooplegende Haile Gebreselassie
-                </li>
-                <li>
-                  Je traint met professionele hardloopgidsen
-                </li>
-                <li>
-                  Je bezoekt de plaats Bekoji waar de wereldberoemde atleten vandaan komen en waar je
-                </li>
-                <li>
-                  met je toekomstig hardlooptalent gaat trainen
-                </li>
-                <li>
-                  Je ervaart de Ethiopische cultuur samen met de lokale bevolking
-                </li>
-                <li>
-                  Je maakt kennis met de prachtige natuur van Ethiopië in Bale Mountains en Lake Hawassa
-                </li>
-              </ul>
+              <%= Kramdown::Document.new(trip.what).to_html %>
             </li>
           </ul>
         </div>

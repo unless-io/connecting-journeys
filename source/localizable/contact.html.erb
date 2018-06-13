@@ -1,30 +1,30 @@
 <div class="main-wrapper">
-  <div class="banner-nav" style="background-image:url('<%= image_path 'header.jpg' %>');">
+  <div class="banner-nav" style="background-image:url('<%= dato.contact_page.banner_image.url %>');">
     <div class="banner-content text-center">
       <h2>
-        Explore Learn Inspire
+        <%= dato.contact_page.title %>
       </h2>
       <ul class="list-inline list-unstyled">
         <li>
-          <%= link_to "Voor jezelf", "#", class: "banner-nav-item" %>
+          <%= link_to "Voor jezelf", "/jezelf.html", class: "banner-nav-item" %>
         </li>
         <span>
           •
         </span>
         <li>
-          <%= link_to "Voor je school", "#", class: "banner-nav-item" %>
+          <%= link_to "Voor je school", "/school.html", class: "banner-nav-item" %>
         </li>
         <span>
           •
         </span>
         <li>
-          <%= link_to "Voor je bedrijf", "#", class: "banner-nav-item" %>
+          <%= link_to "Voor je bedrijf", "/bedrijf.html", class: "banner-nav-item" %>
         </li>
         <span>
           •
         </span>  
         <li>
-          <%= link_to "Voor non-profitorganisaties", "#", class: "banner-nav-item" %>
+          <%= link_to "Voor non-profitorganisaties", "/non-profits.html", class: "banner-nav-item" %>
         </li>
       </ul>
     </div>
@@ -34,21 +34,8 @@
     <div class="row">
       <div class="col-lg-5 col-lg-offset-1 col-xs-12">
         <div class="bio-container text-center">
-          <%= image_tag 'http://placehold.it/200/200', class: "avatar" %>
-          <p>
-            Hoi. Ik ben Laura. <br>
-            Ik kan je helpen de reis te organiseren die <br>
-            perfect past bij wat jij wil bereiken. <br>
-            Een uitdagend programma op maat. <br>
-          </p>
-          <p>
-            Bel of mail me gerust. Ik kom graag met je in <br>
-            gesprek!
-          </p>
-          <p>
-            Telefoon: 06 - 11 322 069 <br>
-            Email:  <a href="mailto:info@connectingjourneys.com?Subject=Hallo!" target="_blank">info@connectingjourneys.com</a>
-          </p>
+          <div class="avatar" style="background-image:url('<%= dato.contact_page.avatar.url %>');"></div>
+          <%= Kramdown::Document.new(dato.contact_page.bio_text).to_html %>
         </div>
       </div>
       <div class="col-lg-5 col-xs-12">
