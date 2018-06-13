@@ -13,8 +13,11 @@
       font-weight: bolder;
     }
     p {
-      font-size: 19px;
+      font-family: "Como", "Helvetica", "sans-serif";
+      font-weight: normal;
+      font-size: 24px;
       margin: 20px 0px;
+      line-height: 31px;
     }
   }
 }
@@ -22,7 +25,7 @@
 .banner-blank, .banner-nav {
   background-size: cover;
   background-position: center;
-  height: 20vh;
+  min-height: 20vh;
   width: 100%;
 }
 

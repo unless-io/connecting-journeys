@@ -5,6 +5,7 @@
   h2 {
     color: $green;
     font-weight: bolder;
+    margin-bottom: 4px;
   }
   .avatar {
     margin: 10px auto;
@@ -24,10 +25,12 @@
   justify-content: space-between;
   p {
     flex: 1 0 auto;
+    line-height: 21px;
   }
   h3 {
     color: $purple;
     font-weight: bolder;
+    margin-bottom: 4px;
   }
 }
 
