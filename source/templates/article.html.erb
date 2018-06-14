@@ -2,7 +2,7 @@
   <div class="background-half-white"></div>
   <div class="banner-nav" style="background-image:url('<%= trip.banner_photo.url %>');">
     <div class="banner-content text-center">
-      <h2 class="big-header">
+      <h2 class="h1-style">
         <%= trip.title %>
       </h2>
       <p class="tagline">
@@ -64,9 +64,11 @@
             <li>
               <span class="identifier"><i class="fas fa-map-marker"></i>Waar:</span> <%= trip.where %>
             </li>
+            <% if trip.amount_of_kilometers != "" %>
             <li>
               <span class="identifier"><i class="fas fa-compass"></i>Aantal km:</span> <%= trip.amount_of_kilometers %>
             </li>
+            <% end %>
           </ul>
           <h2>
             Deelnemen
@@ -82,6 +84,7 @@
               <span class="identifier"><i class="fas fa-calendar-check"></i>Inschrijving:</span> <%= trip.registration %>
             </li>
           </ul>
+          <% if trip.what != "" %>
           <h2>
             Details
           </h2>
@@ -91,6 +94,7 @@
               <%= Kramdown::Document.new(trip.what).to_html %>
             </li>
           </ul>
+          <% end %>
         </div>
       </div>
     </div>

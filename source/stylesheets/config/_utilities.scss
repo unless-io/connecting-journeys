@@ -5,6 +5,8 @@
 .inspiration-text {
   p {
     color: $purple;
+    font-family: "Como", "Helvetica", "sans-serif";
+    font-weight: 500;
   }
 }
 .marged-more {
@@ -15,3 +17,9 @@ p {
   line-height: 21px;
   font-weight: 300;
 }
+
+.h1-style {
+  font-size: 44px;
+  font-weight: bold;
+}
+
