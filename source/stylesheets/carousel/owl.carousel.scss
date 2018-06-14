@@ -8,8 +8,8 @@
   margin: 0 30px;
   background-size: cover;
   background-position: center;
-  .quote {
-    max-width: 850px;
+  p:first-child {
+    max-width: 800px;
     margin: 16px auto;
     font-weight: 100;
   }

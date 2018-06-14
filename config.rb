@@ -17,6 +17,8 @@ dato.tap do |dato|
   end
 end
 
+ignore "/templates/article.html.erb"
+
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false

@@ -13,11 +13,21 @@
 .button-outline.purple {
   border-color: $purple;
   color: $purple;
+  transition: all 200ms ease;
+  &:hover {
+    background-color: $purple;
+    color: white;
+  }
 }
 
 .button-outline.white {
   border-color: white;
   color: white;
+  transition: all 200ms ease;
+  &:hover {
+    background-color: white;
+    color: $gray;
+  }
 }
 
 .button-outline.orange {
@@ -25,6 +35,11 @@
   color: $orange;
   margin-top: 10px;
   display: inline-block;
+  transition: all 200ms ease;
+  &:hover {
+    background-color: $orange;
+    color: white;
+  }
 }
 
 .button-simple {

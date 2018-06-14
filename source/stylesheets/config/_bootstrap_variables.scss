@@ -30,3 +30,8 @@ $font-size-h2: 24px;
 $font-size-h3: 18px;
 // $line-height-base: 21px;
 
+.dropdown {
+  &:hover > ul.dropdown-menu {
+    display: block;    
+  }
+}
