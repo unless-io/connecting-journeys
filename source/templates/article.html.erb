@@ -17,7 +17,7 @@
       <div class="col-xs-12 col-md-6 col-lg-6">
         <div class="journey-description">
           <!-- Set up your HTML -->
-          <div class="owl-carousel owl-theme">
+          <div class="owl-carousel owl-theme" id="trip-photo">
             <% trip.photos.each do |photo| %>
             <div class="carousel-image text-center">
 
@@ -29,8 +29,8 @@
             <% end %>
           </div>
           <div class="owl-custom-nav">
-            <div class="owl-previous-custom owl-nav-chevron"><i class="fas fa-chevron-left"></i></div>
-            <div class="owl-next-custom owl-nav-chevron"><i class="fas fa-chevron-right"></i></div>
+            <div class="owl-previous-custom owl-nav-chevron" data-target="trip-photo"><i class="fas fa-chevron-left"></i></div>
+            <div class="owl-next-custom owl-nav-chevron" data-target="trip-photo"><i class="fas fa-chevron-right"></i></div>
           </div>
           <h2>
             Over deze reis
@@ -41,78 +41,108 @@
 
           <div class="charity">
             <%= Kramdown::Document.new(trip.charity_description).to_html %>
-            </div>
           </div>
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-6">
-          <div class="journey-data-container">
-            <h2>
-              Wanneer
-            </h2>
-            <ul class="data-list list-unstyled">
-             <li>
-              <span class="identifier"><i class="fas fa-calendar-alt"></i>Data:</span> <%= trip.data %>
-            </li>
-            <li>
-              <span class="identifier"><i class="fas fa-clock"></i>Duur:</span> <%= trip.duration %>
-            </li>
-          </ul>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-6">
+        <div class="journey-data-container">
           <h2>
-            Locatie
+            Wanneer
           </h2>
           <ul class="data-list list-unstyled">
-            <li>
-              <span class="identifier"><i class="fas fa-map-marker"></i>Waar:</span> <%= trip.where %>
-            </li>
-            <% if trip.amount_of_kilometers != "" %>
-            <li>
-              <span class="identifier"><i class="fas fa-compass"></i>Aantal km:</span> <%= trip.amount_of_kilometers %>
-            </li>
-            <% end %>
-          </ul>
-          <h2>
-            Deelnemen
-          </h2>
-          <ul class="data-list list-unstyled">
-            <li>
-              <span class="identifier"><i class="fas fa-user"></i>Voor wie:</span> <%= trip.for_who %>
-            </li>
-            <li>
-              <span class="identifier"><i class="fas fa-users"></i>Deelnemers:</span> <%= trip.participants %>
-            </li>
-            <li>
-              <span class="identifier"><i class="fas fa-calendar-check"></i>Inschrijving:</span> <%= trip.registration %>
-            </li>
-          </ul>
-          <% if trip.what != "" %>
-          <h2>
-            Details
-          </h2>
-          <ul class="data-embedded-list">
-            <li class="first-level">
-              <span class="identifier"><i class="fas fa-globe"></i>Wat:</span>
-              <%= Kramdown::Document.new(trip.what).to_html %>
-            </li>
-          </ul>
+           <li>
+            <span class="identifier"><i class="fas fa-calendar-alt"></i>Data:</span> <%= trip.data %>
+          </li>
+          <li>
+            <span class="identifier"><i class="fas fa-clock"></i>Duur:</span> <%= trip.duration %>
+          </li>
+        </ul>
+        <h2>
+          Locatie
+        </h2>
+        <ul class="data-list list-unstyled">
+          <li>
+            <span class="identifier"><i class="fas fa-map-marker"></i>Waar:</span> <%= trip.where %>
+          </li>
+          <% if trip.amount_of_kilometers != "" %>
+          <li>
+            <span class="identifier"><i class="fas fa-compass"></i>Aantal km:</span> <%= trip.amount_of_kilometers %>
+          </li>
           <% end %>
+        </ul>
+        <h2>
+          Deelnemen
+        </h2>
+        <ul class="data-list list-unstyled">
+          <li>
+            <span class="identifier"><i class="fas fa-user"></i>Voor wie:</span> <%= trip.for_who %>
+          </li>
+          <li>
+            <span class="identifier"><i class="fas fa-users"></i>Deelnemers:</span> <%= trip.participants %>
+          </li>
+          <li>
+            <span class="identifier"><i class="fas fa-calendar-check"></i>Inschrijving:</span> <%= trip.registration %>
+          </li>
+        </ul>
+        <% if trip.what != "" %>
+        <h2>
+          Details
+        </h2>
+        <ul class="data-embedded-list">
+          <li class="first-level">
+            <span class="identifier"><i class="fas fa-globe"></i>Wat:</span>
+            <%= Kramdown::Document.new(trip.what).to_html %>
+          </li>
+        </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% testimonials = dato.testimonials.select { |testimonial| testimonial.trip == trip } %>
+
+<% if testimonials.length > 0 %>
+
+<div class="wrapper-white">
+  <p class="text-center purple small-header">
+    Testimonials <br>
+    <i class="fas fa-quote-left"></i>
+  </p>
+  <!-- Set up your HTML -->
+  <div class="owl-carousel owl-theme" id="testimonial">
+    <% testimonials.each do |testimonial| %>
+    <div class="carousel-image text-center">
+      <%= Kramdown::Document.new(testimonial.quote_text).to_html %>
+      <p class="author purple">
+        <%= Kramdown::Document.new(testimonial.full_name_and_company).to_html %>
+      </p>
+      <div class="avatar" style="background-image:url('<%= testimonial.avatar.url %>');"></div>
+    </div>
+    <% end %>
+  </div>
+  <div class="owl-custom-nav">
+    <div class="owl-previous-custom owl-nav-chevron" data-target="testimonial"><i class="fas fa-chevron-left"></i></div>
+    <div class="owl-next-custom owl-nav-chevron" data-target="testimonial"><i class="fas fa-chevron-right"></i></div>
+  </div>
+</div>
+
+<% end %>
+
+
+<div class="wrapper-background-image" style="background-image:url('<%= image_path 'yoga.jpg' %>');">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+        <div class="cta-box">
+          <h2>
+            Interesse in deze reis?
+          </h2>
+          <%= link_to "Neem nu contact op", "#", class: "button-outline white"  %>
         </div>
       </div>
     </div>
   </div>
-  <div class="wrapper-background-image" style="background-image:url('<%= image_path 'yoga.jpg' %>');">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-lg-10 col-lg-offset-1">
-          <div class="cta-box">
-            <h2>
-              Interesse in deze reis?
-            </h2>
-            <%= link_to "Neem nu contact op", "#", class: "button-outline white"  %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
 </div>
 
 

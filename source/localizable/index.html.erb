@@ -46,7 +46,7 @@ title: Connecting Journeys
 			<div class="col-xs-12 col-lg-4">
 				<div class="simple-card">
 					<h3>
-						<%= dato.home_page_section_2.block_1_title %>
+						<%= Kramdown::Document.new(dato.home_page_section_2.block_1_title).to_html %>
 					</h3>
 					<%= Kramdown::Document.new(dato.home_page_section_2.block_1_description).to_html %>
 				</div>
@@ -54,7 +54,7 @@ title: Connecting Journeys
 			<div class="col-xs-12 col-lg-4">
 				<div class="simple-card">
 					<h3>
-						<%= dato.home_page_section_2.block_2_title %>
+						<%= Kramdown::Document.new(dato.home_page_section_2.block_2_title).to_html %>
 					</h3>
 					<%= Kramdown::Document.new(dato.home_page_section_2.block_2_description).to_html %>
 				</div>
@@ -62,7 +62,7 @@ title: Connecting Journeys
 			<div class="col-xs-12 col-lg-4">
 				<div class="simple-card">
 					<h3>
-						<%= dato.home_page_section_2.block_3_title %>
+						<%= Kramdown::Document.new(dato.home_page_section_2.block_3_title).to_html %>
 					</h3>
 					<%= Kramdown::Document.new(dato.home_page_section_2.block_3_description).to_html %>
 				</div>
@@ -102,7 +102,7 @@ title: Connecting Journeys
 			<div class="col-xs-12 col-lg-12">
 				<div class="simple-card-header">
 					<h2>
-						<%= dato.home_page_section_4.title %>
+						<%= Kramdown::Document.new(dato.home_page_section_4.title).to_html %>
 					</h2>
 					<p>
 						<%= Kramdown::Document.new(dato.home_page_section_4.body_text).to_html %>
@@ -112,28 +112,28 @@ title: Connecting Journeys
 			<div class="col-xs-12 col-lg-4">
 				<div class="simple-card">
 					<h3>
-						<%= dato.home_page_section_4.block_1_title %>
+						<%= Kramdown::Document.new(dato.home_page_section_4.block_1_title).to_html %>
 					</h3>
 					<%= Kramdown::Document.new(dato.home_page_section_4.block_1_description).to_html %>
-					<%= link_to "Vertel me meer!", "#", class: "button-simple"  %>
+					<%= link_to "Vertel me meer", "#", class: "button-simple"  %>
 				</div>
 			</div>
 			<div class="col-xs-12 col-lg-4">
 				<div class="simple-card">
 					<h3>
-						<%= dato.home_page_section_4.block_2_title %>
+						<%= Kramdown::Document.new(dato.home_page_section_4.block_2_title).to_html %>
 					</h3>
 					<%= Kramdown::Document.new(dato.home_page_section_4.block_2_description).to_html %>
-					<%= link_to "Vertel me meer!", "#", class: "button-simple"  %>
+					<%= link_to "Vertel me meer", "#", class: "button-simple"  %>
 				</div>
 			</div>
 			<div class="col-xs-12 col-lg-4">
 				<div class="simple-card">
 					<h3>
-						<%= dato.home_page_section_4.block_3_title %>
+						<%= Kramdown::Document.new(dato.home_page_section_4.block_3_title).to_html %>
 					</h3>
 					<%= Kramdown::Document.new(dato.home_page_section_4.block_3_description).to_html %>
-					<%= link_to "Vertel me meer!", "#", class: "button-simple"  %>
+					<%= link_to "Vertel me meer", "#", class: "button-simple"  %>
 				</div>
 			</div>
 		</div>
@@ -166,7 +166,7 @@ title: Connecting Journeys
 		<div class="carousel-image text-center">
 			<%= Kramdown::Document.new(testimonial.quote_text).to_html %>
 			<p class="author purple">
-				<%= testimonial.full_name_and_company %>
+				<%= Kramdown::Document.new(testimonial.full_name_and_company).to_html %>
 			</p>
 			<div class="avatar" style="background-image:url('<%= testimonial.avatar.url %>');"></div>
 		</div>
@@ -198,7 +198,7 @@ title: Connecting Journeys
 					<p>
 						<%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
 					</p>
-					<%= link_to "Vertel me meer!", "#", class: "button-simple"  %>
+					<%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", class: "button-simple"  %>
 				</div>
 			</div>
 			<% end %>
