@@ -24,7 +24,7 @@
           •
         </span>
         <li>
-          <%= link_to "Voor non-profitorganisaties", "/non-profits.html", class: "banner-nav-item" %>
+          <%= link_to "Voor non-profitorganisaties", "/non-profits.html", class: "banner-nav-item #{'active' if current_page.path.include?("non-profits")}" %>
         </li>
       </ul>
     </div>

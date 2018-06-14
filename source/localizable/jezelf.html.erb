@@ -6,7 +6,7 @@
       </h2>
       <ul class="list-inline list-unstyled">
         <li>
-          <%= link_to "Voor jezelf", "/jezelf.html", class: "banner-nav-item" %>
+          <%= link_to "Voor jezelf", "/jezelf.html", class: "banner-nav-item #{'active' if current_page.path.include?("jezelf")}" %>
         </li>
         <span>
           •

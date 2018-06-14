@@ -12,7 +12,7 @@
           •
         </span>
         <li>
-          <%= link_to "Voor je school", "/school.html", class: "banner-nav-item" %>
+          <%= link_to "Voor je school", "/school.html", class: "banner-nav-item #{'active' if current_page.path.include?("school")}" %>
         </li>
         <span>
           •

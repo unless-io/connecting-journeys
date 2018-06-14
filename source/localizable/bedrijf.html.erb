@@ -18,7 +18,7 @@
           •
         </span>
         <li>
-          <%= link_to "Voor je bedrijf", "/bedrijf.html", class: "banner-nav-item" %>
+          <%= link_to "Voor je bedrijf", "/bedrijf.html", class: "banner-nav-item #{'active' if current_page.path.include?("bedrijf")}" %>
         </li>
         <span>
           •
