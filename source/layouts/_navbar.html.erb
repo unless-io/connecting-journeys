@@ -8,32 +8,35 @@
           <% end %>
           <ul class="list-inline navbar-connecting-journeys-right">
             <li>
-              <%= link_to 'Home', "/index.html", class: "navbar-connecting-journeys-link"  %>
+              <%= link_to 'Home', "/index.html", class: "navbar-connecting-journeys-link #{'active' if current_page.path.include?("index")}"  %>
             </li>
             <li>
               <div class="dropdown">
-                <%= link_to 'Voor wie', "/jezelf.html", class: "navbar-connecting-journeys-link dropdown-toggle", id: "nav-dropdown", "data-toggle": "dropdown", "aria-haspopup": true, "aria-expanded": true  %>
+                <% if current_page.path.include?("jezelf") || current_page.path.include?("bedrijf") || current_page.path.include?("school") || current_page.path.include?("non-profits") %>
+                <% voor = true %>
+                <% end %>
+                <%= link_to 'Voor wie', "/jezelf.html", class: "navbar-connecting-journeys-link dropdown-toggle #{'active' if voor}", id: "nav-dropdown", "data-toggle": "dropdown", "aria-haspopup": true, "aria-expanded": true  %>
                 <ul class="dropdown-menu" aria-labelledby="nav-dropdown">
                   <li>
-                    <%= link_to "Jezelf", "/jezelf.html"  %>
+                    <%= link_to "Jezelf", "/jezelf.html", class: "#{'active' if current_page.path.include?("jezelf")}"  %>
                   </li>
                   <li>
-                    <%= link_to "Bedrijven", "/bedrijf.html"  %>
+                    <%= link_to "Bedrijven", "/bedrijf.html", class: "#{'active' if current_page.path.include?("bedrijf")}"  %>
                   </li>
                   <li>
-                    <%= link_to "Scholen", "/school.html"  %>
+                    <%= link_to "Scholen", "/school.html", class: "#{'active' if current_page.path.include?("school")}"  %>
                   </li>
                   <li>
-                    <%= link_to "Non-profits", "/non-profits.html"  %>
+                    <%= link_to "Non-profits", "/non-profits.html", class: "#{'active' if current_page.path.include?("non-profits")}"  %>
                   </li>
                 </ul>
               </div>
             </li>
             <li>
-              <%= link_to 'Over', "/over.html", class: "navbar-connecting-journeys-link"  %>
+              <%= link_to 'Over', "/over.html", class: "navbar-connecting-journeys-link #{'active' if current_page.path.include?("over")}"  %>
             </li>
             <li>
-              <%= link_to 'Contact', "/contact.html", class: "navbar-connecting-journeys-link"  %>
+              <%= link_to 'Contact', "/contact.html", class: "navbar-connecting-journeys-link #{'active' if current_page.path.include?("contact")}"  %>
             </li>
           </ul>
         </div>
