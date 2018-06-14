@@ -32,12 +32,23 @@ function activateCarousel() {
         }
       }
     });
-    document.querySelector('.owl-next-custom').addEventListener('click', function(event) {
-      $(".owl-carousel").trigger('next.owl.carousel');
-    });
-    document.querySelector('.owl-previous-custom').addEventListener('click', function(event) {
-      $(".owl-carousel").trigger('prev.owl.carousel');
-    });
+    document.querySelectorAll('.owl-next-custom').forEach(function(item) {
+      item.addEventListener('click', function(event) {
+        var target = event.currentTarget.dataset.target;
+        if (target) {
+          $("#" + target).trigger('next.owl.carousel');
+        } else {
+          $(".owl-carousel").trigger('next.owl.carousel');
+        }
+      });
+    })
+    document.querySelectorAll('.owl-previous-custom').forEach(function(item) {
+      item.addEventListener('click', function(event) {
+        var target = event.currentTarget.dataset.target;
+        console.log(target)
+        $(".owl-carousel").trigger('prev.owl.carousel');
+      });
+    })
     document.addEventListener('keyup', function(event) {
       if (event.code == "ArrowRight") {
         $(".owl-carousel").trigger('next.owl.carousel');
