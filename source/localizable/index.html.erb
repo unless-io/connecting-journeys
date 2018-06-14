@@ -10,7 +10,7 @@ title: Connecting Journeys
 		<p>
 			<%= dato.home_page.tagline %>
 		</p>
-		<%= link_to dato.home_page.button_text, "#", class: "button-outline white"  %>
+		<%= link_to dato.home_page.button_text, "/contact.html", class: "button-outline white"  %>
 	</div>
 </div>
 
@@ -23,7 +23,7 @@ title: Connecting Journeys
 						<%= dato.home_page_section_1.title %>
 					</h2>
 					<%= Kramdown::Document.new(dato.home_page_section_1.body_text).to_html %>
-					<%= link_to dato.home_page_section_1.button_text, "#", class: "button-outline orange"  %>
+					<%= link_to dato.home_page_section_1.button_text, "/contact.html", class: "button-outline orange"  %>
 				</div>
 			</div>
 		</div>
@@ -71,7 +71,7 @@ title: Connecting Journeys
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="text-center">
-					<%= link_to dato.home_page_section_2.button_text, "#", class: "button-outline orange"  %>
+					<%= link_to dato.home_page_section_2.button_text, "/contact.html", class: "button-outline orange"  %>
 				</div>
 			</div>
 		</div>
@@ -115,7 +115,7 @@ title: Connecting Journeys
 						<%= Kramdown::Document.new(dato.home_page_section_4.block_1_title).to_html %>
 					</h3>
 					<%= Kramdown::Document.new(dato.home_page_section_4.block_1_description).to_html %>
-					<%= link_to "Vertel me meer", "#", class: "button-simple"  %>
+					<%= link_to "Vertel me meer!", "/school.html", class: "button-simple"  %>
 				</div>
 			</div>
 			<div class="col-xs-12 col-lg-4">
@@ -124,7 +124,7 @@ title: Connecting Journeys
 						<%= Kramdown::Document.new(dato.home_page_section_4.block_2_title).to_html %>
 					</h3>
 					<%= Kramdown::Document.new(dato.home_page_section_4.block_2_description).to_html %>
-					<%= link_to "Vertel me meer", "#", class: "button-simple"  %>
+					<%= link_to "Vertel me meer!", "/bedrijf.html", class: "button-simple"  %>
 				</div>
 			</div>
 			<div class="col-xs-12 col-lg-4">
@@ -133,7 +133,7 @@ title: Connecting Journeys
 						<%= Kramdown::Document.new(dato.home_page_section_4.block_3_title).to_html %>
 					</h3>
 					<%= Kramdown::Document.new(dato.home_page_section_4.block_3_description).to_html %>
-					<%= link_to "Vertel me meer", "#", class: "button-simple"  %>
+					<%= link_to "Vertel me meer!", "/non-profits.html", class: "button-simple"  %>
 				</div>
 			</div>
 		</div>

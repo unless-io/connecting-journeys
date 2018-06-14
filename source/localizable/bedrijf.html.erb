@@ -84,7 +84,7 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="text-center">
-          <%= link_to dato.bedrijven_page.section_2_button_text, "#", class: "button-outline orange"  %>
+          <%= link_to dato.bedrijven_page.section_2_button_text, "/contact.html", class: "button-outline orange"  %>
         </div>
       </div>
     </div>
@@ -134,7 +134,7 @@
           <%= Kramdown::Document.new(dato.bedrijven_page.section_4_body_text).to_html %>
           <div class="avatar" style="background-image:url('<%= dato.bedrijven_page.section_4_avatar.url %>');"></div>
           <div class="text-center">
-            <%= link_to dato.bedrijven_page.section_4_button_text, "#", class: "button-outline orange"  %>
+            <%= link_to dato.bedrijven_page.section_4_button_text, "/contact.html", class: "button-outline orange"  %>
           </div>
         </div>
       </div>
@@ -163,7 +163,7 @@
           <p>
             <%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
           </p>
-          <%= link_to "Vertel me meer!", "#", class: "button-simple"  %>
+          <%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", class: "button-simple"  %>
         </div>
       </div>
       <% end %>
