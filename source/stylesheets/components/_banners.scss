@@ -47,8 +47,12 @@
       }
       .banner-nav-item {
         color: white;
+        font-family: "Como", "Helvetica", "sans-serif";
+        font-size: 24px;
         &:hover {
           color: white;
+          text-decoration: none;
+          font-weight: bold;
         }
       }
     }
