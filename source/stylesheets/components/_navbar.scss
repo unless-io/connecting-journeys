@@ -13,12 +13,26 @@
   margin: 0;
   display: flex;
   align-items: center;
+  .dropdown {
+    a.active {
+      font-weight: bolder;
+    }
+  }
 }
 
 .navbar-connecting-journeys-link {
   color: $gray;
   font-weight: lighter;
   margin: 0 5px;
+  text-decoration: none;
+  &.active {
+    font-weight: bolder;
+    text-decoration: none;
+  }
+  &:hover {
+   font-weight: bolder; 
+   text-decoration: none;
+ }
 }
 
 @media (max-width: 768px) {
