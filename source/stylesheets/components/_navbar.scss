@@ -30,7 +30,7 @@
     text-decoration: none;
   }
   &:hover {
-   font-weight: bolder; 
+   font-weight: bolder;
    text-decoration: none;
  }
 }
@@ -44,6 +44,9 @@
     }
     ul.navbar-connecting-journeys-right {
       margin: 20px 0;
+      li {
+        font-size: 14px;
+      }
     }
   }
 }
