@@ -1,7 +1,7 @@
 <div class="main-wrapper">
   <div class="banner-nav" style="background-image:url('<%= dato.contact_page.banner_image.url %>');">
     <div class="banner-content text-center">
-      <h2>
+      <h2 class="h1-style">
         <%= dato.contact_page.title %>
       </h2>
       <ul class="list-inline list-unstyled">
@@ -22,7 +22,7 @@
         </li>
         <span>
           •
-        </span>  
+        </span>
         <li>
           <%= link_to "Voor non-profitorganisaties", "/non-profits.html", class: "banner-nav-item" %>
         </li>
@@ -43,7 +43,7 @@
           <h2>
             Wat kan ik voor je doen?
           </h2>
-          <form action="#">
+          <form action="https://formspree.io/info@connectingjourneys.com">
             <div class="form-group">
               <input type="text" class="form-control" name="Naam" placeholder="Naam">
             </div>

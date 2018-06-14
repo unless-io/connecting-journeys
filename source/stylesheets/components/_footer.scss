@@ -10,5 +10,13 @@
   li {
     font-size: 14px;
     font-weight: lighter;
-  }
+    a {
+      text-decoration: none;
+      color: white;
+      &:hover {
+       font-weight: bold;
+       text-decoration: none;
+     }
+   }
+ }
 }
