@@ -14,9 +14,26 @@
       text-decoration: none;
       color: white;
       &:hover {
-       font-weight: bold;
        text-decoration: none;
      }
    }
  }
+}
+
+.footer-social {
+  a {
+    transition: color 100ms ease;
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+.footer-contact {
+  a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

@@ -18,16 +18,16 @@
                 <%= link_to 'Voor wie', "/jezelf.html", class: "navbar-connecting-journeys-link dropdown-toggle #{'active' if voor}", id: "nav-dropdown", "data-toggle": "dropdown", "aria-haspopup": true, "aria-expanded": true  %>
                 <ul class="dropdown-menu" aria-labelledby="nav-dropdown">
                   <li>
-                    <%= link_to "Jezelf", "/jezelf.html", class: "#{'active' if current_page.path.include?("jezelf")}"  %>
+                    <%= link_to "Voor jezelf", "/jezelf.html", class: "#{'active' if current_page.path.include?("jezelf")}"  %>
                   </li>
                   <li>
-                    <%= link_to "Bedrijven", "/bedrijf.html", class: "#{'active' if current_page.path.include?("bedrijf")}"  %>
+                    <%= link_to "Voor scholen", "/school.html", class: "#{'active' if current_page.path.include?("school")}"  %>
                   </li>
                   <li>
-                    <%= link_to "Scholen", "/school.html", class: "#{'active' if current_page.path.include?("school")}"  %>
+                    <%= link_to "Voor bedrijven", "/bedrijf.html", class: "#{'active' if current_page.path.include?("bedrijf")}"  %>
                   </li>
                   <li>
-                    <%= link_to "Non-profits", "/non-profits.html", class: "#{'active' if current_page.path.include?("non-profits")}"  %>
+                    <%= link_to "Voor NGO's", "/non-profits.html", class: "#{'active' if current_page.path.include?("non-profits")}"  %>
                   </li>
                 </ul>
               </div>

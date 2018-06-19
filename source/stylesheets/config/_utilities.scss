@@ -7,6 +7,7 @@
     color: $purple;
     font-family: "Como", "Helvetica", "sans-serif";
     font-weight: 500;
+    font-size: 18px;
   }
 }
 .marged-more {
@@ -18,3 +19,8 @@ p {
   font-weight: 300;
 }
 
+.bedrijf-aanpassing {
+  p:nth-child(2) {
+    color: $gray;
+  }
+}

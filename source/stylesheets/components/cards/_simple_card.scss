@@ -15,6 +15,15 @@
     background-position: center;
     border-radius: 50%;
   }
+  strong {
+    font-weight: 600;
+  }
+}
+
+.simple-card.no-p-space {
+  p {
+    margin: 0;
+  }
 }
 
 .simple-card {
@@ -31,6 +40,7 @@
     color: $purple;
     font-weight: bolder;
     margin-bottom: 4px;
+    font-size: 20px;
   }
 }
 
@@ -39,4 +49,11 @@
   width: 100%;
   background-size: cover;
   background-position: center;
+}
+
+.simple-card-header-spacing {
+  h2 {
+   margin-bottom: 50px;
+   margin-top: 0;
+ }
 }
