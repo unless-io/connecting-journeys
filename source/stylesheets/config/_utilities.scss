@@ -24,3 +24,8 @@ p {
     color: $gray;
   }
 }
+
+.two-columns-text-left {
+  column-count: 2;
+  text-align: left;
+}
