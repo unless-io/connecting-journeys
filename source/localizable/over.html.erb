@@ -14,49 +14,49 @@
       <div class="col-xs-12">
         <div class="two-columns-text-left bio-container">
           <div class="avatar-container">
-          <%= image_tag dato.about_page.avatar.url, class: "avatar-big" %>
+            <%= image_tag dato.about_page.avatar.url, class: "avatar-big" %>
           </div>
           <%= Kramdown::Document.new(dato.about_page.first_text_block).to_html %>
-
-
         </div>
       </div>
     </div>
   </div>
 </div>
 
-          <%= Kramdown::Document.new(dato.about_page.second_text_block).to_html %>
-
-          <%= Kramdown::Document.new(dato.about_page.third_text_block).to_html %>
-
-<div class="wrapper-background-image" style="background-image:url('<%= dato.jezelf_page.section_4_banner_image.url %>');">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-lg-10 col-lg-offset-1">
-        <div class="cta-box">
-          <h2>
-            <%= dato.jezelf_page.section_4_banner_text %>
-          </h2>
-        </div>
-      </div>
+<div class="wrapper-light-gray">
+  <p class="text-center purple small-header">
+    Testimonials <br>
+    <i class="fas fa-quote-left"></i>
+  </p>
+  <div class="owl-carousel owl-theme">
+    <% dato.testimonials.each do |testimonial| %>
+    <div class="carousel-image text-center">
+      <%= Kramdown::Document.new(testimonial.quote_text).to_html %>
+      <p class="author purple">
+        <%= testimonial.full_name_and_company %>
+      </p>
+      <div class="avatar" style="background-image:url('<%= testimonial.avatar.url %>');"></div>
     </div>
+    <% end %>
+  </div>
+  <div class="owl-custom-nav">
+    <div class="owl-previous-custom owl-nav-chevron"><i class="fas fa-chevron-left"></i></div>
+    <div class="owl-next-custom owl-nav-chevron"><i class="fas fa-chevron-right"></i></div>
   </div>
 </div>
-
 
 <div class="wrapper-white">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <div class="simple-card-header">
-          <h2>
-            <%= dato.jezelf_page.section_4_title %>
-          </h2>
-          <%= Kramdown::Document.new(dato.jezelf_page.section_4_body_text).to_html %>
-          <div class="avatar" style="background-image:url('<%= dato.jezelf_page.section_4_avatar.url %>');"></div>
-          <div class="text-center">
-            <%= link_to dato.jezelf_page.section_4_button_text, "/contact.html", class: "button-outline orange"  %>
-          </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="purple-header">
+        <%= Kramdown::Document.new(dato.about_page.second_text_block).to_html %>
+        </div>
+        <%= link_to "Maak nu een afspraak voor een gesprek!", "/contact.html", class: "button-outline orange"  %>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="purple-header">
+        <%= Kramdown::Document.new(dato.about_page.third_text_block).to_html %>
         </div>
       </div>
     </div>
@@ -64,33 +64,13 @@
 </div>
 
 
-<div class="wrapper-light-gray">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-lg-12">
-        <div class="simple-card-header simple-card-header-spacing">
-          <h2>
-            Ga mee op een van deze reizen
-          </h2>
-        </div>
-      </div>
-      <% dato.trips.first(3).each do |trip| %>
-      <div class="col-xs-12 col-lg-4">
-        <div class="simple-card">
-          <div class="simple-card-image" style="background-image:url('<%= trip.photos.first.url %>');"></div>
-          <h3>
-            <%= trip.title %>
-          </h3>
-          <p>
-            <%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
-          </p>
-          <%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", class: "button-simple"  %>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
 
 
-
+<% content_for :after_js do %>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    console.log("DOM fully loaded and parsed");
+    activateCarousel()
+  });
+</script>
+<% end %>

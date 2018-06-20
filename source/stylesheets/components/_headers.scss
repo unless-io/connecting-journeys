@@ -12,6 +12,13 @@
   font-weight: bolder;
 }
 
+.purple-header {
+  margin-bottom: 20px;
+  h2 {
+    color: $purple;
+    font-weight: 600;
+  }
+}
 
 @media (max-width: 768px) {
   .h1-style {
