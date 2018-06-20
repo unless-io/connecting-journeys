@@ -38,13 +38,50 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="inspiration-text text-center purple">
-          <%= Kramdown::Document.new(dato.ngo_page.main_text).to_html %>
+        <div class="inspiration-text text-center">
+          <div class="purple">
+          <%= Kramdown::Document.new(dato.ngo_page.main_text_purple).to_html %>
+          </div>
+         <div class="simple-card-header">
+          <%= Kramdown::Document.new(dato.ngo_page.main_text_gray).to_html %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="wrapper-background-image" style="background-image:url('<%= dato.ngo_page.section_4_banner_image.url %>');">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+        <div class="cta-box">
+          <h2>
+            <%= dato.ngo_page.section_4_banner_text %>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if dato.ngo_page.section_3_title != "" %>
+<div class="wrapper-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="simple-card-header">
+          <h2>
+            <%= dato.ngo_page.section_3_title %>
+          </h2>
+          <%= Kramdown::Document.new(dato.ngo_page.section_3_body_text).to_html %>
+          <%= link_to "Neem contact op", "/contact.html", class: "button-outline orange"  %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
 
 <div class="wrapper-light-gray">
   <div class="container">
@@ -94,35 +131,8 @@
   </div>
 </div>
 
-<% if dato.ngo_page.section_3_title != "" %>
-<div class="wrapper-white">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="simple-card-header">
-          <h2>
-            <%= dato.ngo_page.section_3_title %>
-          </h2>
-          <%= Kramdown::Document.new(dato.ngo_page.section_3_body_text).to_html %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
-<div class="wrapper-background-image" style="background-image:url('<%= dato.ngo_page.section_4_banner_image.url %>');">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-lg-10 col-lg-offset-1">
-        <div class="cta-box">
-          <h2>
-            <%= dato.ngo_page.section_4_banner_text %>
-          </h2>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
 
 
 <div class="wrapper-white">
