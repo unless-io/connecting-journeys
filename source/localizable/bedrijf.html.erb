@@ -40,13 +40,16 @@
       <div class="col-xs-12">
         <div class="inspiration-text text-center">
           <div class="purple">
-          <%= Kramdown::Document.new(dato.bedrijven_page.main_text_purple).to_html %>
+            <%= Kramdown::Document.new(dato.bedrijven_page.main_text_purple).to_html %>
           </div>
+        </div>
+        <div class="text-center">
           <%= Kramdown::Document.new(dato.bedrijven_page.main_text_gray).to_html %>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 <div class="wrapper-background-image" style="background-image:url('<%= dato.bedrijven_page.section_4_banner_image.url %>');">
   <div class="container">
@@ -166,7 +169,7 @@
           <h3>
             <%= trip.title %>
           </h3>
-            <%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
+          <%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
           <%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", class: "button-simple"  %>
         </div>
       </div>

@@ -2,8 +2,8 @@
   margin: 40px 0;
 }
 
-strong {
-  font-weight: 600;
+b, strong {
+  font-weight: 600 !important;
 }
 
 .inspiration-text {
@@ -11,6 +11,15 @@ strong {
     font-family: "Como", "Helvetica", "sans-serif";
     font-weight: 500;
     font-size: 18px;
+  }
+}
+
+.gray-inspiration-text {
+  text-align: center;
+  h2 {
+    color: $green;
+    font-weight: bolder;
+    margin-bottom: 8px;
   }
 }
 .marged-more {
@@ -22,12 +31,6 @@ p {
   font-weight: 300;
 }
 
-// .bedrijf-aanpassing {
-//   p:nth-child(2) {
-//     color: $gray;
-//   }
-// }
-
 .two-columns-text-left {
   h2 {
     color: $purple;
@@ -38,12 +41,12 @@ p {
 
 @media (max-width: 768px) {
   .two-columns-text-left {
-  column-count: 1;
-}
+    column-count: 1;
+  }
 }
 
 @media (min-width: 769px) {
-    .two-columns-text-left {
-  column-count: 2;
-}
+  .two-columns-text-left {
+    column-count: 2;
+  }
 }
