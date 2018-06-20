@@ -38,10 +38,14 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="inspiration-text two-columns-text-left">
+        <div class="two-columns-text-left">
+
           <%= Kramdown::Document.new(dato.about_page.first_text_block).to_html %>
+
           <%= Kramdown::Document.new(dato.about_page.second_text_block).to_html %>
+
           <%= Kramdown::Document.new(dato.about_page.third_text_block).to_html %>
+
         </div>
       </div>
     </div>
