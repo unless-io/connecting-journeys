@@ -1,35 +1,9 @@
 <div class="main-wrapper">
-  <div class="banner-nav" style="background-image:url('<%= dato.about_page.first_side_image.url %>');">
+  <div class="banner-nav" style="background-image:url('<%= dato.about_page.banner_image.url %>');">
     <div class="banner-content text-center">
       <h2 class="h1-style">
-        <%= dato.about_page.name %>
+        <%= dato.about_page.banner_header %>
       </h2>
-      <p class="subheader">
-        <%= dato.about_page.job_title %>
-      </p>
-      <ul class="list-inline list-unstyled">
-        <li>
-          <%= link_to "Voor jezelf", "/jezelf.html", class: "banner-nav-item" %>
-        </li>
-        <span>
-          •
-        </span>
-        <li>
-          <%= link_to "Voor je school", "/school.html", class: "banner-nav-item" %>
-        </li>
-        <span>
-          •
-        </span>
-        <li>
-          <%= link_to "Voor je bedrijf", "/bedrijf.html", class: "banner-nav-item" %>
-        </li>
-        <span>
-          •
-        </span>
-        <li>
-          <%= link_to "Voor NGO's", "/non-profits.html", class: "banner-nav-item" %>
-        </li>
-      </ul>
     </div>
   </div>
 </div>
@@ -38,13 +12,12 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="two-columns-text-left">
-
+        <div class="two-columns-text-left bio-container">
+          <div class="avatar-container">
+          <%= image_tag dato.about_page.avatar.url, class: "avatar-big" %>
+          </div>
           <%= Kramdown::Document.new(dato.about_page.first_text_block).to_html %>
 
-          <%= Kramdown::Document.new(dato.about_page.second_text_block).to_html %>
-
-          <%= Kramdown::Document.new(dato.about_page.third_text_block).to_html %>
 
         </div>
       </div>
@@ -52,6 +25,9 @@
   </div>
 </div>
 
+          <%= Kramdown::Document.new(dato.about_page.second_text_block).to_html %>
+
+          <%= Kramdown::Document.new(dato.about_page.third_text_block).to_html %>
 
 <div class="wrapper-background-image" style="background-image:url('<%= dato.jezelf_page.section_4_banner_image.url %>');">
   <div class="container">

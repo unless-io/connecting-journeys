@@ -1,16 +1,15 @@
 .bio-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 80%;
-  margin: 0 auto;
-  .avatar {
-    width: 200px;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    margin: 20px 0;
-  }
+	.avatar-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	.avatar-big {
+		height: 300px;
+		width: 300px;
+		border-radius: 50%;
+		background-size: cover;
+		background-position: center;
+		margin: 20px 0;
+	}
+	}
 }
