@@ -26,6 +26,11 @@ p {
 }
 
 .two-columns-text-left {
+  h2 {
+    color: $purple;
+    font-weight: bold;
+  }
   column-count: 2;
   text-align: left;
+    break-after: column;
 }
