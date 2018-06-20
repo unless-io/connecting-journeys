@@ -5,7 +5,7 @@
         <h3>
           Contact
         </h3>
-        <ul class="list-unstyled">
+        <ul class="list-unstyled footer-contact">
           <li>
             Laura Hogervorst
           </li>
@@ -13,58 +13,65 @@
             <%= dato.footer.phone_number %>
           </li>
           <li>
-            <%= dato.footer.email %>
-          </li>
-        </ul>
-      </div>
-      <div class="col-xs-12 col-lg-3">
-        <h3>
-          Reizen
-        </h3>
-        <ul class="list-unstyled">
-          <li>
-            <%= link_to "Voor jezelf", "/jezelf.html" %>
-          </li>
-          <li>
-            <%= link_to "Voor scholen", "/school.html" %>
-          </li>
-          <li>
-            <%= link_to "Voor (non-profit) organisaties", "/non-profits.html" %>
-          </li>
-          <li>
-            <%= link_to "Voor bedrijven", "/bedrijf.html" %>
-          </li>
-        </ul>
-      </div>
-      <div class="col-xs-12 col-lg-3">
-        <h3>
-          Social
-        </h3>
-        <ul class="list-unstyled">
-          <li>
-            xxx
-          </li>
-          <li>
-            xxx
-          </li>
-          <li>
-            xxx
-          </li>
-        </ul>
-      </div>
-      <div class="col-xs-12 col-lg-3">
-        <h3>
-          Voorwaarden
-        </h3>
-        <ul class="list-unstyled">
-          <li>
-            <%= dato.footer.voorwaarden %>
-          </li>
-          <li class="hidden-xs">
-            <%= image_tag "Logos.png" %>
-          </li>
-        </ul>
-      </div>
+           <%= Kramdown::Document.new(dato.footer.email).to_html %>
+         </li>
+       </ul>
+     </div>
+     <div class="col-xs-12 col-lg-3">
+      <h3>
+        Voor wie
+      </h3>
+      <ul class="list-unstyled">
+        <li>
+          <%= link_to "Voor jezelf", "/jezelf.html" %>
+        </li>
+        <li>
+          <%= link_to "Voor scholen", "/school.html" %>
+        </li>
+        <li>
+          <%= link_to "Voor (non-profit) organisaties", "/non-profits.html" %>
+        </li>
+        <li>
+          <%= link_to "Voor bedrijven", "/bedrijf.html" %>
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-lg-3">
+      <h3>
+        Social
+      </h3>
+      <ul class="list-unstyled footer-social">
+        <li>
+          <% link_to dato.footer.linkedin, target: "_blank" do %>
+          <i class="fab fa-linkedin"></i>
+          <span>
+            LinkedIN
+          </span>
+          <% end %>
+        </li>
+        <li>
+          <% link_to dato.footer.facebook, target: "_blank" do %>
+          <i class="fab fa-facebook"></i>
+          <span>
+            Facebook
+          </span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-lg-3">
+      <h3>
+        Voorwaarden
+      </h3>
+      <ul class="list-unstyled">
+        <li>
+          <%= dato.footer.voorwaarden %>
+        </li>
+        <li class="hidden-xs">
+          <%= image_tag "Logos.png" %>
+        </li>
+      </ul>
     </div>
   </div>
+</div>
 </div>

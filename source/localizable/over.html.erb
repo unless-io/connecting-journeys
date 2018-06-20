@@ -1,68 +1,116 @@
 <div class="main-wrapper">
+  <div class="banner-nav" style="background-image:url('<%= dato.about_page.first_side_image.url %>');">
+    <div class="banner-content text-center">
+      <h2 class="h1-style">
+        <%= dato.about_page.name %>
+      </h2>
+      <p class="subheader">
+        <%= dato.about_page.job_title %>
+      </p>
+      <ul class="list-inline list-unstyled">
+        <li>
+          <%= link_to "Voor jezelf", "/jezelf.html", class: "banner-nav-item" %>
+        </li>
+        <span>
+          •
+        </span>
+        <li>
+          <%= link_to "Voor je school", "/school.html", class: "banner-nav-item" %>
+        </li>
+        <span>
+          •
+        </span>
+        <li>
+          <%= link_to "Voor je bedrijf", "/bedrijf.html", class: "banner-nav-item" %>
+        </li>
+        <span>
+          •
+        </span>
+        <li>
+          <%= link_to "Voor NGO's", "/non-profits.html", class: "banner-nav-item" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper-white">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-lg-6">
-        <div class="over-content">
-          <section class="introduction">
-            <div class="content-wrapper">
-              <div class="content">
-                <div class="title-avatar" style="background-image:url('<%= image_path 'laura.jpg' %>');">
-                </div>
-                <div class="name-and-title">
-                  <h2>
-                    <%= dato.about_page.name %>
-                  </h2>
-                  <h3>
-                    <%= dato.about_page.job_title %>
-                  </h3>
-                </div>
-              </div>
-              <%= link_to dato.about_page.button_text, "contact.html", class: "button-outline purple"  %>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div class="col-xs-12 col-lg-6">
-        <div class="main-text">
+      <div class="col-xs-12">
+        <div class="inspiration-text two-columns-text-left">
           <%= Kramdown::Document.new(dato.about_page.first_text_block).to_html %>
-        </div>
-      </div>
-    </div>
-    <div class="row marged-more">
-      <div class="col-xs-12 col-lg-6">
-        <section class="text-segment">
           <%= Kramdown::Document.new(dato.about_page.second_text_block).to_html %>
-        </section>
-      </div>
-      <div class="col-xs-12 col-lg-6">
-        <div class="side-image fourhundred-high" style="background-image:url('<%= dato.about_page.first_side_image.url %>');">
-        </div>
-      </div>
-    </div>
-    <div class="row marged-more">
-      <div class="col-xs-12 col-lg-6">
-        <div class="side-image fourhundred-high" style="background-image:url('<%= image_path dato.about_page.second_side_image.url %>');">
-        </div>
-      </div>
-      <div class="col-xs-12 col-lg-6">
-        <section class="text-segment">
           <%= Kramdown::Document.new(dato.about_page.third_text_block).to_html %>
-        </section>
+        </div>
       </div>
     </div>
   </div>
-  <div class="wrapper-background-image" style="background-image:url('<%= image_path 'yoga.jpg' %>');">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-lg-10 col-lg-offset-1">
-          <div class="cta-box">
-            <h2>
-              <%= dato.about_page.contact_banner_text %>
-            </h2>
-            <%= link_to "Neem nu contact op", "#", class: "button-outline white"  %>
+</div>
+
+
+<div class="wrapper-background-image" style="background-image:url('<%= dato.jezelf_page.section_4_banner_image.url %>');">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+        <div class="cta-box">
+          <h2>
+            <%= dato.jezelf_page.section_4_banner_text %>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="wrapper-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="simple-card-header">
+          <h2>
+            <%= dato.jezelf_page.section_4_title %>
+          </h2>
+          <%= Kramdown::Document.new(dato.jezelf_page.section_4_body_text).to_html %>
+          <div class="avatar" style="background-image:url('<%= dato.jezelf_page.section_4_avatar.url %>');"></div>
+          <div class="text-center">
+            <%= link_to dato.jezelf_page.section_4_button_text, "/contact.html", class: "button-outline orange"  %>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<div class="wrapper-light-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <div class="simple-card-header simple-card-header-spacing">
+          <h2>
+            Ga mee op een van deze reizen
+          </h2>
+        </div>
+      </div>
+      <% dato.trips.first(3).each do |trip| %>
+      <div class="col-xs-12 col-lg-4">
+        <div class="simple-card">
+          <div class="simple-card-image" style="background-image:url('<%= trip.photos.first.url %>');"></div>
+          <h3>
+            <%= trip.title %>
+          </h3>
+          <p>
+            <%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
+          </p>
+          <%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", class: "button-simple"  %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+

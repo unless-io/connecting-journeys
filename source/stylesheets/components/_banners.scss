@@ -19,7 +19,7 @@
   .banner-full-width {
     .banner-content {
       p {
-      font-size: 24px;
+        font-size: 24px;
       }
     }
   }
@@ -48,6 +48,10 @@
       // max-width: 600px;
       margin: 10px auto;
     }
+    .button-outline {
+      display: inline-block;
+      margin-top: 20px;
+    }
   }
 }
 
@@ -74,6 +78,7 @@
       }
       .banner-nav-item {
         color: white;
+        font-family: "Como", "Helvetica", "sans-serif";
         &:hover {
           color: white;
           text-decoration: none;
@@ -85,5 +90,10 @@
       }
     }
   }
+}
+
+.banner-content .subheader {
+  margin: 0;
+  font-family: "Como", "Helvetica", "sans-serif";
 }
 

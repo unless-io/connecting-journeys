@@ -1,37 +1,47 @@
 .navbar-connecting-journeys-container {
   background-color: white;
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 99;
+  .logo {
+    font-family: 'Como';
+  }
 }
 
 .navbar-connecting-journeys {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  font-family: 'Como';
 }
 
 .navbar-connecting-journeys-right {
   margin: 0;
   display: flex;
   align-items: center;
+  color: #878786;
   .dropdown {
     a.active {
       font-weight: bolder;
+      color: $green;
     }
   }
 }
 
 .navbar-connecting-journeys-link {
   color: $gray;
-  font-weight: lighter;
   margin: 0 5px;
   text-decoration: none;
+  color: #878786;
+  font-weight: bolder;
   &.active {
-    font-weight: bolder;
     text-decoration: none;
+    color: $green;
   }
   &:hover {
-   font-weight: bolder;
    text-decoration: none;
+   color: $green;
  }
 }
 
@@ -54,7 +64,7 @@
 @media (min-width: 768px) {
   .navbar-connecting-journeys {
     flex-direction: row;
-    margin: 40px 0;
+    margin: 20px 0;
     .logo {
       height: 50px;
     }
