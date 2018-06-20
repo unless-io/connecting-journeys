@@ -8,7 +8,6 @@ strong {
 
 .inspiration-text {
   p {
-    color: $purple;
     font-family: "Como", "Helvetica", "sans-serif";
     font-weight: 500;
     font-size: 18px;
@@ -34,6 +33,17 @@ p {
     color: $purple;
     font-weight: bold;
   }
-  column-count: 2;
   text-align: left;
+}
+
+@media (max-width: 768px) {
+  .two-columns-text-left {
+  column-count: 1;
+}
+}
+
+@media (min-width: 769px) {
+    .two-columns-text-left {
+  column-count: 2;
+}
 }
