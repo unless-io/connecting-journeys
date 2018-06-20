@@ -1,5 +1,5 @@
 <div class="main-wrapper">
-  <div class="background-half-white"></div>
+  <!-- <div class="background-half-white"></div> -->
   <div class="banner-nav" style="background-image:url('<%= trip.banner_photo.url %>');">
     <div class="banner-content text-center">
       <h2 class="h1-style">
@@ -11,27 +11,41 @@
     </div>
   </div>
 
+  <div class="wrapper-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="inspiration-text text-center">
+            <%= Kramdown::Document.new(trip.main_text).to_html %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper-light-gray">
+  <div class="container">
+    <!-- Set up your HTML -->
+    <div class="owl-carousel owl-theme" id="trip-photo">
+      <% trip.photos.each do |photo| %>
+      <div class="carousel-image text-center">
+        <a href="<%= photo.url %>" class="swipebox">
+          <div class="carousel-image-item" style="background-image:url('<%= photo.url %>');"></div>
+        </a>
+      </div>
+      <% end %>
+    </div>
+    <div class="owl-custom-nav">
+      <div class="owl-previous-custom owl-nav-chevron" data-target="trip-photo"><i class="fas fa-chevron-left"></i></div>
+      <div class="owl-next-custom owl-nav-chevron" data-target="trip-photo"><i class="fas fa-chevron-right"></i></div>
+    </div>
+  </div>
+</div>
+<div class="wrapper-white">
 
   <div class="container marged">
     <div class="row">
       <div class="col-xs-12 col-md-6 col-lg-6">
         <div class="journey-description">
-          <!-- Set up your HTML -->
-          <div class="owl-carousel owl-theme" id="trip-photo">
-            <% trip.photos.each do |photo| %>
-            <div class="carousel-image text-center">
-
-              <a href="<%= photo.url %>" class="swipebox">
-                <div class="carousel-image-item" style="background-image:url('<%= photo.url %>');"></div>
-              </a>
-
-            </div>
-            <% end %>
-          </div>
-          <div class="owl-custom-nav">
-            <div class="owl-previous-custom owl-nav-chevron" data-target="trip-photo"><i class="fas fa-chevron-left"></i></div>
-            <div class="owl-next-custom owl-nav-chevron" data-target="trip-photo"><i class="fas fa-chevron-right"></i></div>
-          </div>
           <h2 class="purple">
             Over deze reis
           </h2>
@@ -99,11 +113,13 @@
     </div>
   </div>
 </div>
+</div>
+
 <% testimonials = dato.testimonials.select { |testimonial| testimonial.trip == trip } %>
 
 <% if testimonials.length > 0 %>
 
-<div class="wrapper-white">
+<div class="wrapper-light-gray">
   <p class="text-center purple small-header">
     Testimonials <br>
     <i class="fas fa-quote-left"></i>
@@ -127,7 +143,6 @@
 </div>
 
 <% end %>
-
 
 <div class="wrapper-background-image" style="background-image:url('<%= image_path 'yoga.jpg' %>');">
   <div class="container">
