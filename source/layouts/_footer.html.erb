@@ -32,7 +32,7 @@
           <%= link_to "Voor bedrijven", "/bedrijf.html" %>
         </li>
         <li>
-          <%= link_to "Voor (non-profit) organisaties", "/non-profits.html" %>
+          <%= link_to "Voor NGO's", "/non-profits.html" %>
         </li>
       </ul>
     </div>
@@ -54,6 +54,14 @@
           <i class="fab fa-facebook"></i>
           <span>
             Facebook
+          </span>
+          <% end %>
+        </li>
+        <li>
+          <% link_to dato.footer.facebook, target: "_blank" do %>
+          <i class="fab fa-instagram"></i>
+          <span>
+            Instagram
           </span>
           <% end %>
         </li>
