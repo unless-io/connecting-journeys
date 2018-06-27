@@ -129,9 +129,9 @@
     <% testimonials.each do |testimonial| %>
     <div class="carousel-image text-center">
       <%= Kramdown::Document.new(testimonial.quote_text).to_html %>
-      <p class="author purple">
+      <div class="author purple">
         <%= Kramdown::Document.new(testimonial.full_name_and_company).to_html %>
-      </p>
+      </div>
       <div class="avatar" style="background-image:url('<%= testimonial.avatar.url %>');"></div>
     </div>
     <% end %>
