@@ -196,7 +196,7 @@ title: ConnectingJourneys - Home
 						<%= trip.title %>
 					</h3>
 						<%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
-					<%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", class: "button-simple"  %>
+					<%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", target: "_blank", class: "button-simple"  %>
 				</div>
 			</div>
 			<% end %>
