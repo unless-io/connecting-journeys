@@ -3,7 +3,7 @@ title: ConnectingJourneys - Voor bedrijven
 ---
 
 <div class="main-wrapper">
-  <div class="banner-nav" style="background-image:url('<%= dato.jezelf_page.banner_image.url %>');">
+  <div class="banner-nav" style="background-image:linear-gradient(-180deg, rgba(1,1,1,0.2) 0%, rgba(1,1,1,0.2) 50%),url('<%= dato.jezelf_page.banner_image.url %>');">
     <div class="banner-content text-center">
       <h2 class="h1-style">
         <%= dato.bedrijven_page.title %>
@@ -55,7 +55,7 @@ title: ConnectingJourneys - Voor bedrijven
   </div>
 </div>
 </div>
-<div class="wrapper-background-image" style="background-image:url('<%= dato.bedrijven_page.section_4_banner_image.url %>');">
+<div class="wrapper-background-image" style="background-image:linear-gradient(-180deg, rgba(1,1,1,0.2) 0%, rgba(1,1,1,0.2) 50%),url('<%= dato.bedrijven_page.section_4_banner_image.url %>');">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-lg-10 col-lg-offset-1">
@@ -63,6 +63,9 @@ title: ConnectingJourneys - Voor bedrijven
           <h2>
             <%= dato.bedrijven_page.section_4_banner_text %>
           </h2>
+          <p>
+            <%= dato.bedrijven_page.section_4_name %>
+          </p>
         </div>
       </div>
     </div>

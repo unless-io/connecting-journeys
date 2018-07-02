@@ -25,96 +25,96 @@
     </div>
   </div>
   <div class="wrapper-light-gray">
-  <div class="container">
-    <!-- Set up your HTML -->
-    <div class="owl-carousel owl-theme" id="trip-photo">
-      <% trip.photos.each do |photo| %>
-      <div class="carousel-image text-center">
-        <a href="<%= photo.url %>" class="swipebox">
-          <div class="carousel-image-item" style="background-image:url('<%= photo.url %>');"></div>
-        </a>
-      </div>
-      <% end %>
-    </div>
-    <div class="owl-custom-nav">
-      <div class="owl-previous-custom owl-nav-chevron" data-target="trip-photo"><i class="fas fa-chevron-left"></i></div>
-      <div class="owl-next-custom owl-nav-chevron" data-target="trip-photo"><i class="fas fa-chevron-right"></i></div>
-    </div>
-  </div>
-</div>
-<div class="wrapper-white">
-
-  <div class="container marged">
-    <div class="row">
-      <div class="col-xs-12 col-md-6 col-lg-6">
-        <div class="journey-description">
-          <h2 class="purple">
-            Over deze reis
-          </h2>
-          <p>
-            <%= Kramdown::Document.new(trip.description).to_html %>
-          </p>
-
-          <div class="charity">
-            <%= Kramdown::Document.new(trip.charity_description).to_html %>
-          </div>
+    <div class="container">
+      <!-- Set up your HTML -->
+      <div class="owl-carousel owl-carousel-article owl-theme" id="trip-photo">
+        <% trip.photos.each do |photo| %>
+        <div class="carousel-image text-center">
+          <a href="<%= photo.url %>" class="swipebox">
+            <div class="carousel-image-item" style="background-image:url('<%= photo.url %>');"></div>
+          </a>
         </div>
-      </div>
-      <div class="col-xs-12 col-md-6 col-lg-6">
-        <div class="journey-data-container">
-          <h2 class="purple">
-            Wanneer
-          </h2>
-          <ul class="data-list list-unstyled">
-           <li>
-            <span class="identifier"><i class="fas fa-calendar-alt"></i>Data:</span> <%= trip.data %>
-          </li>
-          <li>
-            <span class="identifier"><i class="fas fa-clock"></i>Duur:</span> <%= trip.duration %>
-          </li>
-        </ul>
-        <h2 class="purple">
-          Locatie
-        </h2>
-        <ul class="data-list list-unstyled">
-          <li>
-            <span class="identifier"><i class="fas fa-map-marker"></i>Waar:</span> <%= trip.where %>
-          </li>
-          <% if trip.amount_of_kilometers != "" %>
-          <li>
-            <span class="identifier"><i class="fas fa-compass"></i>Aantal km:</span> <%= trip.amount_of_kilometers %>
-          </li>
-          <% end %>
-        </ul>
-        <h2 class="purple">
-          Deelnemen
-        </h2>
-        <ul class="data-list list-unstyled">
-          <li>
-            <span class="identifier"><i class="fas fa-user"></i>Voor wie:</span> <%= trip.for_who %>
-          </li>
-          <li>
-            <span class="identifier"><i class="fas fa-users"></i>Deelnemers:</span> <%= trip.participants %>
-          </li>
-          <li>
-            <span class="identifier"><i class="fas fa-calendar-check"></i>Inschrijving:</span> <%= trip.registration %>
-          </li>
-        </ul>
-        <% if trip.what != nil && trip.what != "" %>
-        <h2 class="purple">
-          Details
-        </h2>
-        <ul class="data-embedded-list">
-          <li class="first-level">
-            <span class="identifier"><i class="fas fa-globe"></i>Wat:</span>
-            <%= trip.what %>
-          </li>
-        </ul>
         <% end %>
       </div>
+      <div class="owl-custom-nav">
+        <div class="owl-previous-custom owl-nav-chevron" data-target="trip-photo"><i class="fas fa-chevron-left"></i></div>
+        <div class="owl-next-custom owl-nav-chevron" data-target="trip-photo"><i class="fas fa-chevron-right"></i></div>
+      </div>
     </div>
   </div>
-</div>
+  <div class="wrapper-white">
+
+    <div class="container marged">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-6">
+          <div class="journey-description">
+            <h2 class="purple">
+              Over deze reis
+            </h2>
+            <p>
+              <%= Kramdown::Document.new(trip.description).to_html %>
+            </p>
+
+            <div class="charity">
+              <%= Kramdown::Document.new(trip.charity_description).to_html %>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-6">
+          <div class="journey-data-container">
+            <h2 class="purple">
+              Wanneer
+            </h2>
+            <ul class="data-list list-unstyled">
+             <li>
+              <span class="identifier"><i class="fas fa-calendar-alt"></i>Data:</span> <%= trip.data %>
+            </li>
+            <li>
+              <span class="identifier"><i class="fas fa-clock"></i>Duur:</span> <%= trip.duration %>
+            </li>
+          </ul>
+          <h2 class="purple">
+            Locatie
+          </h2>
+          <ul class="data-list list-unstyled">
+            <li>
+              <span class="identifier"><i class="fas fa-map-marker"></i>Waar:</span> <%= trip.where %>
+            </li>
+            <% if trip.amount_of_kilometers != "" %>
+            <li>
+              <span class="identifier"><i class="fas fa-compass"></i>Aantal km:</span> <%= trip.amount_of_kilometers %>
+            </li>
+            <% end %>
+          </ul>
+          <h2 class="purple">
+            Deelnemen
+          </h2>
+          <ul class="data-list list-unstyled">
+            <li>
+              <span class="identifier"><i class="fas fa-user"></i>Voor wie:</span> <%= trip.for_who %>
+            </li>
+            <li>
+              <span class="identifier"><i class="fas fa-users"></i>Deelnemers:</span> <%= trip.participants %>
+            </li>
+            <li>
+              <span class="identifier"><i class="fas fa-calendar-check"></i>Inschrijving:</span> <%= trip.registration %>
+            </li>
+          </ul>
+          <% if trip.what != nil && trip.what != "" %>
+          <h2 class="purple">
+            Details
+          </h2>
+          <ul class="data-embedded-list">
+            <li class="first-level">
+              <span class="identifier"><i class="fas fa-globe"></i>Wat:</span>
+              <%= trip.what %>
+            </li>
+          </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <% testimonials = dato.testimonials.select { |testimonial| testimonial.trip == trip } %>
@@ -167,7 +167,9 @@
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
     console.log("DOM fully loaded and parsed");
-    activateCarousel();
+    activateCarouselArticle("#trip-photo", 3);
+    activateCarouselArticle("#testimonial", 1);
+
     $('.swipebox').swipebox();
   });
 </script>

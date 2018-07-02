@@ -3,7 +3,7 @@ title: ConnectingJourneys - Voor NGO's
 ---
 
 <div class="main-wrapper">
-  <div class="banner-nav" style="background-image:url('<%= dato.jezelf_page.banner_image.url %>');">
+  <div class="banner-nav" style="background-image:linear-gradient(-180deg, rgba(1,1,1,0.2) 0%, rgba(1,1,1,0.2) 50%),url('<%= dato.jezelf_page.banner_image.url %>');">
     <div class="banner-content text-center">
       <h2 class="h1-style">
         <%= dato.ngo_page.title %>
@@ -44,18 +44,18 @@ title: ConnectingJourneys - Voor NGO's
       <div class="col-xs-12">
         <div class="inspiration-text text-center">
           <div class="purple">
-          <%= Kramdown::Document.new(dato.ngo_page.main_text_purple).to_html %>
+            <%= Kramdown::Document.new(dato.ngo_page.main_text_purple).to_html %>
           </div>
         </div>
-         <div class="gray-inspiration-text">
+        <div class="gray-inspiration-text">
           <%= Kramdown::Document.new(dato.ngo_page.main_text_gray).to_html %>
-          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="wrapper-background-image" style="background-image:url('<%= dato.ngo_page.section_4_banner_image.url %>');">
+<div class="wrapper-background-image" style="background-image:linear-gradient(-180deg, rgba(1,1,1,0.2) 0%, rgba(1,1,1,0.2) 50%),url('<%= dato.ngo_page.section_4_banner_image.url %>');">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-lg-10 col-lg-offset-1">
@@ -63,6 +63,9 @@ title: ConnectingJourneys - Voor NGO's
           <h2>
             <%= dato.ngo_page.section_4_banner_text %>
           </h2>
+          <p>
+            <%= dato.ngo_page.section_4_name %>
+          </p>
         </div>
       </div>
     </div>
@@ -176,7 +179,7 @@ title: ConnectingJourneys - Voor NGO's
           <h3>
             <%= trip.title %>
           </h3>
-            <%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
+          <%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
           <%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", class: "button-simple"  %>
         </div>
       </div>

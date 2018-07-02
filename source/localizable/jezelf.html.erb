@@ -3,7 +3,7 @@ title: ConnectingJourneys - Voor jezelf
 ---
 
 <div class="main-wrapper">
-  <div class="banner-nav" style="background-image:url('<%= dato.jezelf_page.banner_image.url %>');">
+  <div class="banner-nav" style="background-image:linear-gradient(-180deg, rgba(1,1,1,0.2) 0%, rgba(1,1,1,0.2) 50%),url('<%= dato.jezelf_page.banner_image.url %>');">
     <div class="banner-content text-center">
       <h2 class="h1-style">
         <%= dato.jezelf_page.title %>
@@ -113,7 +113,7 @@ title: ConnectingJourneys - Voor jezelf
   </div>
 </div>
 
-<div class="wrapper-background-image" style="background-image:url('<%= dato.jezelf_page.section_4_banner_image.url %>');">
+<div class="wrapper-background-image" style="background-image:linear-gradient(-180deg, rgba(1,1,1,0.2) 0%, rgba(1,1,1,0.2) 50%),url('<%= dato.jezelf_page.section_4_banner_image.url %>');">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-lg-10 col-lg-offset-1">
@@ -121,6 +121,9 @@ title: ConnectingJourneys - Voor jezelf
           <h2>
             <%= dato.jezelf_page.section_4_banner_text %>
           </h2>
+          <p>
+            <%= dato.jezelf_page.section_4_name %>
+          </p>
         </div>
       </div>
     </div>
@@ -165,7 +168,7 @@ title: ConnectingJourneys - Voor jezelf
           <h3>
             <%= trip.title %>
           </h3>
-            <%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
+          <%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
           <%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", class: "button-simple"  %>
         </div>
       </div>

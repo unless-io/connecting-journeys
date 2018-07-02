@@ -2,7 +2,7 @@
 title: ConnectingJourneys - Home
 ---
 
-<div class="banner-full-width" style="background-image:url('<%= dato.home_page.banner_image.url %>');">
+<div class="banner-full-width" style="background-image:linear-gradient(-180deg, rgba(1,1,1,0.2) 0%, rgba(1,1,1,0.2) 50%),url('<%= dato.home_page.banner_image.url %>');">
 	<div class="banner-content">
 		<h1>
 			<%= dato.home_page.title %>
@@ -79,7 +79,8 @@ title: ConnectingJourneys - Home
 </div>
 
 
-<div class="wrapper-purple">
+
+<div class="wrapper-background-image" style="background-image:linear-gradient(-180deg, rgba(1,1,1,0.2) 0%, rgba(1,1,1,0.2) 50%),url('<%= dato.home_page_section_3.background_image.url %>');">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-lg-8 col-lg-offset-2">
@@ -140,7 +141,7 @@ title: ConnectingJourneys - Home
 	</div>
 </div>
 
-<div class="wrapper-background-image" style="background-image:url('<%= dato.home_page_section_5.banner_image.url %>');">
+<div class="wrapper-background-image" style="background-image:linear-gradient(-180deg, rgba(1,1,1,0.2) 0%, rgba(1,1,1,0.2) 50%),url('<%= dato.home_page_section_5.banner_image.url %>');">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-lg-10 col-lg-offset-1">
@@ -162,7 +163,7 @@ title: ConnectingJourneys - Home
 	</p>
 	<!-- Set up your HTML -->
 	<div class="owl-carousel owl-theme">
-		<% dato.testimonials.each do |testimonial| %>
+		<% dato.testimonials.select { |testimonial| testimonial.visible_on_home_page }.each do |testimonial| %>
 		<div class="carousel-image text-center">
 			<%= Kramdown::Document.new(testimonial.quote_text).to_html %>
 			<p class="author purple">
