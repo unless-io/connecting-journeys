@@ -14,16 +14,17 @@
     margin: 20px 0;
   }
 }
-	.avatar-container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		.avatar-big {
-			height: 300px;
-			width: 300px;
-			border-radius: 50%;
-			background-size: cover;
-			background-position: center;
-			margin-bottom: 20px;
-		}
-	}
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .avatar-big {
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+  }
+}

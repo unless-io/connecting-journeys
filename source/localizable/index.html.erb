@@ -23,7 +23,7 @@ title: ConnectingJourneys - Home
 						<%= dato.home_page_section_1.title %>
 					</h2>
 					<%= Kramdown::Document.new(dato.home_page_section_1.body_text).to_html %>
-					<%= link_to dato.home_page_section_1.button_text, "/contact.html", class: "button-outline orange"  %>
+					<%= link_to dato.home_page_section_1.button_text, "/over.html", class: "button-outline orange"  %>
 				</div>
 			</div>
 		</div>
@@ -148,7 +148,7 @@ title: ConnectingJourneys - Home
 					<h2>
 						<%= dato.home_page_section_5.banner_text %>
 					</h2>
-					<%= link_to dato.home_page_section_5.button_text, "#", class: "button-outline white"  %>
+					<%= link_to dato.home_page_section_5.button_text, "/contact.html", class: "button-outline white"  %>
 				</div>
 			</div>
 		</div>
@@ -195,8 +195,8 @@ title: ConnectingJourneys - Home
 					<h3>
 						<%= trip.title %>
 					</h3>
-						<%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
-					<%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", target: "_blank", class: "button-simple"  %>
+					<%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
+					<%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", class: "button-simple"  %>
 				</div>
 			</div>
 			<% end %>

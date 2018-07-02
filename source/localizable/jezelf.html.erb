@@ -91,7 +91,7 @@ title: ConnectingJourneys - Voor jezelf
     <div class="row">
       <div class="col-xs-12">
         <div class="text-center">
-          <%= link_to dato.jezelf_page.section_2_button_text, "/contact.html", target: "_blank", class: "button-outline orange"  %>
+          <%= link_to dato.jezelf_page.section_2_button_text, "/contact.html", class: "button-outline orange"  %>
         </div>
       </div>
     </div>
@@ -166,7 +166,7 @@ title: ConnectingJourneys - Voor jezelf
             <%= trip.title %>
           </h3>
             <%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
-          <%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", target: "_blank", class: "button-simple"  %>
+          <%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", class: "button-simple"  %>
         </div>
       </div>
       <% end %>
