@@ -2,17 +2,39 @@
 title: ConnectingJourneys - Reizen
 ---
 
-<div class="banner-full-width" style="background-image:linear-gradient(-180deg, rgba(1,1,1,0.2) 0%, rgba(1,1,1,0.2) 50%),url('<%= dato.home_page.banner_image.url %>');">
-  <div class="banner-content">
-    <h1>
-      <%= dato.home_page.title %>
-    </h1>
-    <p>
-      <%= dato.home_page.tagline %>
-    </p>
-    <%= link_to dato.home_page.button_text, "/contact.html", class: "button-outline white"  %>
+  <div class="banner-nav" style="background-image:linear-gradient(-180deg, rgba(1,1,1,0.2) 0%, rgba(1,1,1,0.2) 50%),url('<%= dato.reizen_page.banner_image.url %>');">
+    <div class="banner-content text-center">
+      <h2 class="h1-style">
+        <%= dato.reizen_page.title %>
+      </h2>
+      <p class="subheader">
+        Organiseer een reis
+      </p>
+      <ul class="list-inline list-unstyled">
+        <li>
+          <%= link_to "Voor jezelf", "/jezelf.html", class: "banner-nav-item" %>
+        </li>
+        <span>
+          •
+        </span>
+        <li>
+          <%= link_to "Voor je school", "/school.html", class: "banner-nav-item" %>
+        </li>
+        <span>
+          •
+        </span>
+        <li>
+          <%= link_to "Voor je bedrijf", "/bedrijf.html", class: "banner-nav-item #{'active' if current_page.path.include?("bedrijf")}" %>
+        </li>
+        <span>
+          •
+        </span>
+        <li>
+          <%= link_to "Voor NGO's", "/non-profits.html", class: "banner-nav-item" %>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
 
 <div class="wrapper-white">
   <div class="container">
