@@ -24,7 +24,7 @@ title: ConnectingJourneys - Reizen
           </h2>
         </div>
       </div>
-      <% dato.trips.each do |trip| %>
+      <% dato.trips.select {|trip| trip.visible }.each do |trip| %>
       <div class="col-xs-12 col-lg-4">
         <div class="simple-card no-p-space">
           <div class="simple-card-image" style="background-image:url('<%= trip.photos.first.url %>');"></div>
@@ -32,7 +32,7 @@ title: ConnectingJourneys - Reizen
             <%= trip.title %>
           </h3>
             <%= Kramdown::Document.new(truncate(trip.description, length: 100)).to_html %>
-          <%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", target: "_blank", class: "button-simple"  %>
+          <%= link_to "Vertel me meer!", "/reizen/#{trip.slug}.html", class: "button-simple"  %>
         </div>
       </div>
       <% end %>
