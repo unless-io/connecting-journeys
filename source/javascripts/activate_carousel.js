@@ -1,5 +1,10 @@
 function activateCarouselNav(selector) {
-  document.querySelectorAll('.owl-next-custom').forEach(function(item) {
+  if (selector.includes('.')) {
+    var navigationElements = document.querySelector(selector).parentElement.querySelectorAll('.owl-next-custom');
+  } else {
+    var navigationElements = document.getElementById(selector).parentElement.querySelectorAll('.owl-next-custom');
+  }
+  navigationElements.forEach(function(item) {
     item.addEventListener('click', function(event) {
       var target = event.currentTarget.dataset.target;
       if (target) {
@@ -55,7 +60,7 @@ function activateCarousel() {
 
 function activateCarouselArticle(carouselSelector, amountOfPictures) {
   $(document).ready(function(){
-    $(carouselSelector).owlCarousel({
+    $("#" + carouselSelector).owlCarousel({
       loop: true,
       nav: true,
       dots: true,
