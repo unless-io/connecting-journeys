@@ -1,4 +1,4 @@
-function activateCarouselNav(selector) {
+function activateNext(selector) {
   if (selector.includes('.')) {
     var navigationElements = document.querySelector(selector).parentElement.querySelectorAll('.owl-next-custom');
   } else {
@@ -14,13 +14,31 @@ function activateCarouselNav(selector) {
       }
     });
   })
-  document.querySelectorAll('.owl-previous-custom').forEach(function(item) {
+}
+
+function activatePrevious(selector) {
+  if (selector.includes('.')) {
+    var navigationElements = document.querySelector(selector).parentElement.querySelectorAll('.owl-previous-custom');
+  } else {
+    var navigationElements = document.getElementById(selector).parentElement.querySelectorAll('.owl-previous-custom');
+  }
+  navigationElements.forEach(function(item) {
     item.addEventListener('click', function(event) {
       var target = event.currentTarget.dataset.target;
-      console.log(target)
-      $(selector).trigger('prev.owl.carousel');
+      if (target) {
+        $("#" + target).trigger('prev.owl.carousel');
+      } else {
+        $(selector).trigger('prev.owl.carousel');
+      }
     });
   })
+}
+
+function activateCarouselNav(selector) {
+  activateNext(selector);
+  activatePrevious(selector);
+
+
   document.addEventListener('keyup', function(event) {
     if (event.code == "ArrowRight") {
       $(selector).trigger('next.owl.carousel');
