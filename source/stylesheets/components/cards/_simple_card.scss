@@ -47,6 +47,20 @@
   }
 }
 
+.simple-card .simple-card-content {
+  p:first-child {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    height: 66px;
+    overflow: hidden;
+    display: block;
+  }
+  p {
+    display: none;
+  }
+}
+
 .simple-card .simple-card-image {
   height: 200px;
   width: 100%;

@@ -1,3 +1,28 @@
+.button-inverse {
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size:17px;
+  font-family: "Como", "Helvetica", "sans-serif";
+  text-shadow: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.button-inverse.orange {
+  color: white;
+  margin-top: 10px;
+  display: inline-block;
+  transition: all 200ms ease;
+  background-color: $orange;
+  &:hover {
+    background-color: white;
+    color: $orange;
+    text-decoration: none;
+  }
+}
+
 .button-outline {
   border: 1px solid;
   padding: 5px 15px;

@@ -1,0 +1,12 @@
+.logo-container {
+  display: grid;
+  grid-auto-rows: 100px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    align-self: center;
+    object-fit: contain;
+  }
+}

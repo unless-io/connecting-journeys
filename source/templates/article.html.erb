@@ -10,6 +10,7 @@
       <p class="tagline">
         <%= trip.tagline %>
       </p>
+      <%= link_to 'Contact', "/contact.html", class: "button-inverse orange" %>
     </div>
   </div>
 
@@ -20,7 +21,13 @@
           <div class="inspiration-text text-center purple">
             <%= Kramdown::Document.new(trip.main_text).to_html %>
           </div>
-        </div>
+          <% if trip.youtube_link != "" %>
+          <iframe class="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/<%= trip.youtube_link %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <% end %>
+          <% if trip.vimeo_link != "" %>
+          <iframe class="video-iframe" src="https://player.vimeo.com/video/<%= trip.vimeo_link %>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <% end %>
+        </div>     
       </div>
     </div>
   </div>
@@ -67,10 +74,16 @@
             </h2>
             <ul class="data-list list-unstyled">
              <li>
-              <span class="identifier"><i class="fas fa-calendar-alt"></i>Data:</span> <%= trip.data %>
+              <span class="identifier"><i class="fas fa-calendar-alt"></i>Data:</span> 
+              <div class="content">
+                <%= trip.data %>
+              </div>
             </li>
             <li>
-              <span class="identifier"><i class="fas fa-clock"></i>Duur:</span> <%= trip.duration %>
+              <span class="identifier"><i class="fas fa-clock"></i>Duur:</span> 
+              <div class="content">
+                <%= trip.duration %>
+              </div>
             </li>
           </ul>
           <h2 class="purple">
@@ -78,11 +91,17 @@
           </h2>
           <ul class="data-list list-unstyled">
             <li>
-              <span class="identifier"><i class="fas fa-map-marker"></i>Waar:</span> <%= trip.where %>
+              <span class="identifier"><i class="fas fa-map-marker"></i>Waar:</span> 
+              <div class="content">
+                <%= trip.where %>
+              </div>
             </li>
             <% if trip.amount_of_kilometers != "" %>
             <li>
-              <span class="identifier"><i class="fas fa-compass"></i>Aantal km:</span> <%= trip.amount_of_kilometers %>
+              <span class="identifier"><i class="fas fa-compass"></i>Aantal km:</span> 
+              <div class="content">
+                <%= trip.amount_of_kilometers %>
+              </div>
             </li>
             <% end %>
           </ul>
@@ -91,13 +110,22 @@
           </h2>
           <ul class="data-list list-unstyled">
             <li>
-              <span class="identifier"><i class="fas fa-user"></i>Voor wie:</span> <%= trip.for_who %>
+              <span class="identifier"><i class="fas fa-user"></i>Voor wie:</span> 
+              <div class="content">
+                <%= trip.for_who %>
+              </div>
             </li>
             <li>
-              <span class="identifier"><i class="fas fa-users"></i>Deelnemers:</span> <%= trip.participants %>
+              <span class="identifier"><i class="fas fa-users"></i>Deelnemers:</span> 
+              <div class="content">
+                <%= trip.participants %>
+              </div>
             </li>
             <li>
-              <span class="identifier"><i class="fas fa-calendar-check"></i>Inschrijving:</span> <%= trip.registration %>
+              <span class="identifier"><i class="fas fa-calendar-check"></i>Inschrijving:</span> 
+              <div class="content">
+                <%= trip.registration %>
+              </div>
             </li>
           </ul>
           <% if trip.what != nil && trip.what != "" %>
@@ -107,7 +135,50 @@
           <ul class="data-embedded-list">
             <li class="first-level">
               <span class="identifier"><i class="fas fa-globe"></i>Wat:</span>
-              <%= trip.what %>
+              <div class="content">
+                <%= Kramdown::Document.new(trip.what).to_html %>
+              </div>
+            </li>
+          </ul>
+          <% end %>
+          <% if trip.logos.any? %>
+          <div class="logo-container">
+            <% trip.logos.each do |logo| %>
+            <img src="<%= logo.url %>" alt="">
+            <% end %>
+          </div>
+          <% end %>
+          <% if trip.trainers.any? %>
+          <ul class="data-list list-unstyled">
+            <li>
+              <span class="identifier"><i class="fas fa-user-circle"></i></i>Trainers:</span> 
+              <div class="trainers-container">
+                <% trip.trainers.each_with_index do |trainer, index| %>
+
+                <button type="button" class="trainer" data-toggle="modal" data-target="#trainer-<%= index %>">
+                  <img src="<%= trainer.avatar.url %>" alt="">
+                  <%= trainer.name %>
+                </button>
+
+                <div class="modal fade" id="trainer-<%= index %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel"><%= trainer.name %></h4>
+                      </div>
+                      <div class="modal-body trainer-modal">
+                        <img src="<%= trainer.avatar.url %>" alt="">
+                        <div class="trainer-modal-content">
+                          <%= trainer.bio %>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
             </li>
           </ul>
           <% end %>
