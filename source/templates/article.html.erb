@@ -76,13 +76,13 @@
              <li>
               <span class="identifier"><i class="fas fa-calendar-alt"></i>Data:</span> 
               <div class="content">
-                <%= trip.data %>
+                <%= Kramdown::Document.new(trip.data).to_html %>
               </div>
             </li>
             <li>
               <span class="identifier"><i class="fas fa-clock"></i>Duur:</span> 
               <div class="content">
-                <%= trip.duration %>
+                <%= Kramdown::Document.new(trip.duration).to_html %>
               </div>
             </li>
           </ul>
@@ -93,7 +93,7 @@
             <li>
               <span class="identifier"><i class="fas fa-map-marker"></i>Waar:</span> 
               <div class="content">
-                <%= trip.where %>
+                <%= Kramdown::Document.new(trip.where).to_html %>
               </div>
             </li>
             <% if trip.amount_of_kilometers != "" %>
@@ -112,19 +112,19 @@
             <li>
               <span class="identifier"><i class="fas fa-user"></i>Voor wie:</span> 
               <div class="content">
-                <%= trip.for_who %>
+                <%= Kramdown::Document.new(trip.for_who).to_html %>
               </div>
             </li>
             <li>
               <span class="identifier"><i class="fas fa-users"></i>Deelnemers:</span> 
               <div class="content">
-                <%= trip.participants %>
+                <%= Kramdown::Document.new(trip.participants).to_html %>
               </div>
             </li>
             <li>
               <span class="identifier"><i class="fas fa-calendar-check"></i>Inschrijving:</span> 
               <div class="content">
-                <%= trip.registration %>
+                <%= Kramdown::Document.new(trip.registration).to_html %>
               </div>
             </li>
           </ul>
@@ -142,11 +142,16 @@
           </ul>
           <% end %>
           <% if trip.logos.any? %>
-          <div class="logo-container">
-            <% trip.logos.each do |logo| %>
-            <img src="<%= logo.url %>" alt="">
-            <% end %>
-          </div>
+          <ul class="data-list list-unstyled">
+            <li>
+              <span class="identifier">Partners:</span> 
+              <div class="logo-container">
+                <% trip.logos.each do |logo| %>
+                <img src="<%= logo.url %>" alt="">
+                <% end %>
+              </div>
+            </li>
+          </ul>
           <% end %>
           <% if trip.trainers.any? %>
           <ul class="data-list list-unstyled">
@@ -170,7 +175,7 @@
                       <div class="modal-body trainer-modal">
                         <img src="<%= trainer.avatar.url %>" alt="">
                         <div class="trainer-modal-content">
-                          <%= trainer.bio %>
+                          <%= Kramdown::Document.new(trainer.bio).to_html %>
                         </div>
                       </div>
 
@@ -239,7 +244,9 @@
   document.addEventListener("DOMContentLoaded", function(event) {
     console.log("DOM fully loaded and parsed");
     activateCarouselArticle("trip-photo", 3);
-    activateCarouselArticle("testimonial", 1);
+    if(document.querySelector('#testimonial')) {
+      activateCarouselArticle("testimonial", 1);
+    }
 
     $('.swipebox').swipebox();
   });
