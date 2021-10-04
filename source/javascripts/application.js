@@ -1,14 +1,12 @@
 import $ from "jquery";
 import 'owl.carousel';
 import 'bootstrap';
-import 'swipebox';
 import { activateCarousel, activateCarouselArticle } from "./activate_carousel";
 
 document.addEventListener("DOMContentLoaded", function(event) {
   $('.dropdown-toggle').dropdown()
 });
 
-$('.swipebox').swipebox();
 
 
 activateCarousel()
