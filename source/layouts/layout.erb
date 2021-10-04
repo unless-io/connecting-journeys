@@ -17,9 +17,9 @@
   <%= yield %>
   <%= partial "layouts/footer" %>
   <%= partial "layouts/js_references" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "bundle" %>
   <% if content_for?(:after_js) %>
-  <%= yield_content :after_js %>
+    <%= yield_content :after_js %>
   <% end %>
 </body>
 </html>

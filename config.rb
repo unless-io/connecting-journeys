@@ -1,14 +1,22 @@
+config[:sass_assets_paths] << File.join(root, 'node_modules')
+
+set :css_dir,    'stylesheets'
+set :images_dir, 'images'
+set :js_dir,     'javascripts'
+
+
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 
-activate :sprockets
-activate :dato, live_reload: true
-activate :i18n, mount_at_root: :nl, langs: [:en, :nl]
+activate :external_pipeline,
+         name: :webpack,
+         command: build? ? 'yarn run build' : 'yarn run start',
+         source: 'dist',
+         latency: 1
 
-configure :development do
-  activate :livereload
-end
+activate :dato
+activate :i18n, mount_at_root: :nl, langs: [:en, :nl]
 
 dato.tap do |dato|
 
@@ -24,11 +32,12 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 
 configure :build do
-  activate :minify_css
-  activate :minify_javascript
-  activate :asset_hash
-  activate :relative_assets
+  ignore   File.join(config[:js_dir], '*') # handled by webpack
   set :relative_links, true
+  activate :asset_hash
+  activate :gzip
+  activate :minify_css
+  activate :relative_assets
 end
 
 activate :deploy do |deploy|
