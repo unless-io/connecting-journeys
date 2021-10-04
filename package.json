@@ -29,7 +29,11 @@
     "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --bail -p"
   },
   "dependencies": {
+    "bootstrap": "3",
     "core-js": "^3.9.1",
+    "jquery": "^3.6.0",
+    "owl.carousel": "^2.3.4",
+    "swipebox": "^1.4.6",
     "terser-webpack-plugin": "^4.2.3"
   }
 }

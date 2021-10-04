@@ -5,6 +5,14 @@
 @import 'video';
 $purple: #60217b;
 
+.owl-nav {
+  display: none;
+}
+
+.owl-dots {
+  display: none;
+}
+
 .carousel-image {
   margin: 0 30px;
   background-size: cover;

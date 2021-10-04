@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 function activateNext(selector) {
   if (selector.includes('.')) {
     var navigationElements = document.querySelector(selector).parentElement.querySelectorAll('.owl-next-custom');
@@ -104,3 +106,4 @@ function activateCarouselArticle(carouselSelector, amountOfPictures) {
   });
 }
 
+export { activateCarousel, activateCarouselArticle };
